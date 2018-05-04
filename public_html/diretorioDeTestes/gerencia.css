@@ -1,0 +1,117 @@
+body{
+  margin:0;
+  padding:0;
+}
+#sair{
+  width:960px;
+  text-align:right;  
+}
+
+#corpo{
+  width:100%;
+  float:left;
+}
+
+#conteudo{
+  width:960px;
+  max-width:960px;
+  margin:0 auto;  
+}
+
+#aguardeCep{
+  width:450px;
+  position:absolute;
+  top:-5000px;
+  left:-5000px;  
+  background: url('http://www.aquifinanciamentos.com.br/2/img/capa.png');
+  border-radius:10px;
+  padding:10px;
+  color:white;
+  font-weight:bold;
+  text-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+.gerencia{
+  width:920px;
+  border-radius:10px;
+  background: #0072bc;
+  float:left;
+  padding:20px;
+  margin:15px;
+  margin-left:0px;
+}
+
+.gerencia *{
+  color: #FFF;
+}
+
+.gerencia input, .gerencia select, .gerencia textarea, .gerencia option{
+  color: #000;
+}
+
+.adiciona{
+  text-align:right;
+}
+
+.tabela th{
+  background: #AAA;
+}
+
+.etapa{
+  max-width:800px;
+  width:800px;
+  float:left;
+}
+
+.etapa li{
+  max-width:800px;
+  width:auto;
+  height:auto;
+  padding: 0px 5px;
+  margin: 2px 0;
+  float:left;
+  list-style:none;
+}
+
+.obrigatorio{
+  color:#F00;
+}
+
+form{
+  margin:0px;
+}
+
+
+/*Duplicado*/
+/* Inicio - Barra do topo da Página */
+#barraTopo{
+  background:#333;
+  width:100%;
+  height:50px;  
+  float:left;
+}
+
+#navTopo{
+  margin: 0 auto;
+  width:960px;
+}
+
+#navTopo a{
+  display:block;
+  height:20px;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: all 1s;
+  text-shadow: 2px 2px rgba(0, 0, 0, .5);
+  text-transform: uppercase;
+}
+
+#navTopo a:hover{
+  padding: 15px 20px 30px 20px;
+  background: rgba(255, 216, 0, .75);
+}
+
+input, select, textarea, option {
+  color: black;
+}

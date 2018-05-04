@@ -1,0 +1,102 @@
+[Fri May 04 00:31:13 2018] [error] [client 5.255.250.85] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/robots.txt
+[Fri May 04 05:12:43 2018] [error] [client 157.55.39.33] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/robots.txt
+[Fri May 04 06:31:42 2018] [error] [client 66.249.64.198] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/robots.txt
+[Fri May 04 07:04:46 2018] [error] [client 100.43.85.184] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/robots.txt
+[Fri May 04 08:22:49 2018] [error] [client 177.157.22.194] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 08:28:38 2018] [error] [client 177.2.14.236] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 08:33:32 2018] [error] [client 66.249.64.201] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/robots.txt
+[Fri May 04 08:33:44 2018] [error] [client 66.249.64.199] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 08:35:34 2018] [error] [client 200.178.12.82] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 08:37:30 2018] [error] [client 66.249.83.75] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 08:37:30 2018] [error] [client 66.249.83.75] no acceptable variant: /home/httpd/error/HTTP_NOT_FOUND.html.var
+[Fri May 04 08:37:49 2018] [error] [client 181.223.0.191] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 08:43:14 2018] [error] [client 66.249.85.11] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/novaFichaCadastral.php
+[Fri May 04 08:49:06 2018] [error] [client 201.37.114.241] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 08:53:40 2018] [error] [client 191.248.105.14] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 08:54:45 2018] [error] [client 187.18.108.174] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 08:56:11 2018] [error] [client 177.0.209.31] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 08:57:47 2018] [error] [client 179.187.30.78] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 08:59:29 2018] [error] [client 177.143.211.100] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 08:59:30 2018] [error] [client 177.143.211.100] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 09:00:36 2018] [error] [client 189.26.191.177] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 09:00:52 2018] [error] [client 191.179.198.202] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 09:01:50 2018] [error] [client 191.177.185.244] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 09:06:00 2018] [error] [client 66.249.83.76] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 09:06:00 2018] [error] [client 66.249.83.76] no acceptable variant: /home/httpd/error/HTTP_NOT_FOUND.html.var
+[Fri May 04 09:08:14 2018] [error] [client 177.156.102.5] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 09:08:14 2018] [error] [client 177.156.102.5] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 09:10:43 2018] [error] [client 66.249.64.193] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 09:14:01 2018] [error] [client 201.40.180.39] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 09:14:04 2018] [error] [client 201.40.180.39] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 09:14:09 2018] [error] [client 201.40.180.39] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 09:14:11 2018] [error] [client 201.40.180.39] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 09:20:02 2018] [error] [client 177.79.3.240] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 09:22:56 2018] [error] [client 186.225.242.6] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/index.php
+[Fri May 04 09:23:43 2018] [error] [client 177.156.102.5] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 09:23:43 2018] [error] [client 177.156.102.5] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 09:28:03 2018] [error] [client 179.217.216.83] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 09:28:03 2018] [error] [client 179.217.216.83] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 09:30:42 2018] [error] [client 201.37.114.241] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 09:33:55 2018] [error] [client 189.114.102.223] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 09:33:57 2018] [error] [client 189.114.102.223] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 09:39:24 2018] [error] [client 138.118.148.40] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 09:40:42 2018] [error] [client 200.229.212.224] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 09:50:52 2018] [error] [client 189.114.202.129] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 09:57:41 2018] [error] [client 66.249.64.198] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 09:59:37 2018] [error] [client 191.251.34.163] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 10:01:33 2018] [error] [client 179.223.165.249] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 10:09:32 2018] [error] [client 177.184.249.154] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 10:09:43 2018] [error] [client 179.127.183.150] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 10:11:42 2018] [error] [client 191.248.105.14] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 10:21:25 2018] [error] [client 186.215.17.50] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 10:32:09 2018] [error] [client 187.39.232.75] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 10:35:16 2018] [error] [client 187.7.0.86] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php?erro=Usu%C3%A1rio%20inexistente%20ou%20Senha%20errada!
+[Fri May 04 10:43:28 2018] [error] [client 179.222.236.187] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 10:49:06 2018] [error] [client 177.205.5.100] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 11:01:16 2018] [error] [client 201.94.199.227] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 11:04:33 2018] [error] [client 66.249.64.203] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 11:07:58 2018] [error] [client 66.249.85.11] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 11:17:59 2018] [error] [client 179.184.16.162] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 11:18:44 2018] [error] [client 66.249.83.6] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 11:18:44 2018] [error] [client 66.249.83.6] no acceptable variant: /home/httpd/error/HTTP_NOT_FOUND.html.var
+[Fri May 04 11:19:23 2018] [error] [client 201.76.12.34] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 11:22:20 2018] [error] [client 181.220.98.245] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 11:23:07 2018] [error] [client 177.4.23.198] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 11:23:08 2018] [error] [client 177.4.23.198] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 11:28:51 2018] [error] [client 187.112.73.188] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 11:39:53 2018] [error] [client 187.103.240.15] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 11:42:35 2018] [error] [client 191.177.185.244] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 11:42:55 2018] [error] [client 66.249.85.13] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/novaFichaCadastral.php
+[Fri May 04 11:48:58 2018] [error] [client 181.223.25.179] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 11:56:37 2018] [error] [client 179.177.206.47] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 12:00:02 2018] [error] [client 187.18.108.174] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 12:13:47 2018] [error] [client 66.249.85.15] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 12:22:16 2018] [error] [client 66.102.6.216] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/novaFichaCadastral.php on line 20, referer: https://www.google.com/
+[Fri May 04 12:23:18 2018] [error] [client 191.251.34.163] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 12:28:13 2018] [error] [client 187.112.60.25] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 12:37:43 2018] [error] [client 189.26.158.235] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 12:47:41 2018] [error] [client 201.66.62.147] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 13:01:27 2018] [error] [client 66.249.64.196] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 13:04:36 2018] [error] [client 177.16.131.195] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 13:06:27 2018] [error] [client 141.8.143.137] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/robots.txt
+[Fri May 04 13:06:27 2018] [error] [client 141.8.143.130] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/robots.txt
+[Fri May 04 13:08:51 2018] [error] [client 191.177.1.182] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 13:14:53 2018] [error] [client 186.206.0.106] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 13:28:32 2018] [error] [client 66.249.85.13] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 13:31:41 2018] [error] [client 186.206.0.106] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 13:34:49 2018] [error] [client 186.236.175.178] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 13:34:57 2018] [error] [client 46.229.168.82] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/robots.txt
+[Fri May 04 13:41:27 2018] [error] [client 177.220.234.190] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 13:43:36 2018] [error] [client 177.4.204.167] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 13:43:36 2018] [error] [client 177.4.204.167] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 13:43:37 2018] [error] [client 177.4.204.167] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 13:45:13 2018] [error] [client 201.41.204.79] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 14:07:37 2018] [error] [client 179.217.216.83] PHP Fatal error:  Call to a member function data_seek() on a non-object in /home/storage/7/f4/73/aquifinanciamentos/public_html/loja/selecionarTipoFicha.php on line 26
+[Fri May 04 14:07:38 2018] [error] [client 179.217.216.83] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/loja/loginLoja.php
+[Fri May 04 14:07:52 2018] [error] [client 201.37.114.241] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 14:09:27 2018] [error] [client 179.179.118.186] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 14:12:21 2018] [error] [client 181.220.155.195] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/
+[Fri May 04 14:13:48 2018] [error] [client 66.249.64.201] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico
+[Fri May 04 14:18:17 2018] [error] [client 177.96.165.236] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 14:18:21 2018] [error] [client 189.26.158.235] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://www.aquifinanciamentos.com.br/
+[Fri May 04 14:32:10 2018] [error] [client 201.54.107.135] File does not exist: /home/storage/7/f4/73/aquifinanciamentos/public_html/favicon.ico, referer: http://aquifinanciamentos.com.br/

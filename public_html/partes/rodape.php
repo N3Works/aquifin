@@ -1,0 +1,1 @@
+<footer id="rodape">	<div id="infoRodape">		<bold>AQUI FINANCIAMENTOS</bold>		<p>portocred.sl@hotmail.com</p>		<p>Telefones: (51)3081-6555 / (51) 3592-6775 <br>		   Whatsapp (51) 99513 0988 </p>	</div></footer>
