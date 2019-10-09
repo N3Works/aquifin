@@ -1,244 +1,244 @@
-@charset "utf-8";
-
-/* CSS Document */
-    #conteudo{
-
-    float:left;
-
-    width:960px;
-
-    min-height:200px;
-
-    }
-
-    
-
-    
-
-    #carro, #moto, #casa{
-
-    float:right;
-
-    width:400px;
-
-    height:250px;	
-
-    }
-
-    
-
-    #atendimento, #form, #contact, #about {
-
-    position:absolute;
-
-    left: -2000px;
-
-    
-
-    }
-
-    
-
-    #home{
-
-    float:left;
-
-    width:940px;
-
-    margin: 0 10px;
-
-    }
-
-    
-
-    .lista{
-
-    color: #FF0;
-
-    font-weight:bold;
-
-    list-style:none;
-
-    width:940px;
-
-    float:left;
-
-    border-radius:10px;
-
-    background: rgba(0,0,0,0.5);
-
-    }
-
-    
-	input.loja{
-		
-		font-size:16px;
-
-		padding: 10px 0;
-
-		width: 222px;
-
-	}
-
-    
-
-    #tabela{
-
-        max-width:600px;
-
-    }
-
-    #tabela tr{
-
-        max-width:600px;
-
-        margin:5px;
-
-    }
-
-    
-
-    #tabela td{
-
-        min-width:23px;
-
-        margin:5px;
-
-    }
-
-    
-
-
-
-    
-
-
-
-
-
-	.nextbutton{
-
-	height:50px;float:right;	
-
-	}
-
-	.nextbutton2{
-
-	height:50px;width:50px; float:right; margin: 405px -450px 0 0;	
-
-	}	
-
-    .avanca, .retorna{
-
-    opacity:0;	
-
-    }
-
-	.retorna{
-
-	        -moz-transform: scaleX(-1);
-
-        -o-transform: scaleX(-1);
-
-        -webkit-transform: scaleX(-1);
-
-        transform: scaleX(-1);
-
-        filter: FlipH;
-
-        -ms-filter: "FlipH";
-
-
-
-	}
-
-	
-
-	#e1, #e2, #e3, #e4, #e5, #e6, #e7{
-
-	max-width:450px;
-
-	width:450px;
-
-	height:468px;
-
-}
-
-	#e1 li, #e2 li, #e3 li, #e4 li, #e5 li, #e6 li, #e7 li{
-
-	max-width:450px;
-
-	width:auto;
-
-	height:auto;
-
-	padding: 0px 5px;
-
-	margin: 2px 0;
-
-	float:left;
-
-	list-style:none;
-
-}
-
-
-
-
-
-    #contato{
-
-    width:940px; height:468px; margin: 120px auto; 
-
-    background:#0072bc url(img/contato.png) -120px 0px;
-
-    border-radius:10px; padding:10px;
-
-    color:white;	
-
-    transition:background 1s;
-
-    -webkit-transition:background 1s;
-
-    }
-
-
-
-.obrigatorio{
-
-color:#F00;
-
-}
-
-
-
-#solicitacao li{
-
-text-shadow: 2px 2px rgba(0,0,0,0.5);
-
-}
-
-#confirmando {
-
-width:100%;
-
-float:left;
-
-font-size:50%;
-
-}
-
-
-
-#confirmando li{
-
-float:left;
-
-width:50%;
-
-list-style:none;
-
-}
-
-
-
+@charset "utf-8";
+
+/* CSS Document */
+    #conteudo{
+
+    float:left;
+
+    width:960px;
+
+    min-height:200px;
+
+    }
+
+    
+
+    
+
+    #carro, #moto, #casa{
+
+    float:right;
+
+    width:400px;
+
+    height:250px;	
+
+    }
+
+    
+
+    #atendimento, #form, #contact, #about {
+
+    position:absolute;
+
+    left: -2000px;
+
+    
+
+    }
+
+    
+
+    #home{
+
+    float:left;
+
+    width:940px;
+
+    margin: 0 10px;
+
+    }
+
+    
+
+    .lista{
+
+    color: #FF0;
+
+    font-weight:bold;
+
+    list-style:none;
+
+    width:940px;
+
+    float:left;
+
+    border-radius:10px;
+
+    background: rgba(0,0,0,0.5);
+
+    }
+
+    
+	input.loja{
+		
+		font-size:16px;
+
+		padding: 10px 0;
+
+		width: 222px;
+
+	}
+
+    
+
+    #tabela{
+
+        max-width:600px;
+
+    }
+
+    #tabela tr{
+
+        max-width:600px;
+
+        margin:5px;
+
+    }
+
+    
+
+    #tabela td{
+
+        min-width:23px;
+
+        margin:5px;
+
+    }
+
+    
+
+
+
+    
+
+
+
+
+
+	.nextbutton{
+
+	height:50px;float:right;	
+
+	}
+
+	.nextbutton2{
+
+	height:50px;width:50px; float:right; margin: 405px -450px 0 0;	
+
+	}	
+
+    .avanca, .retorna{
+
+    opacity:0;	
+
+    }
+
+	.retorna{
+
+	        -moz-transform: scaleX(-1);
+
+        -o-transform: scaleX(-1);
+
+        -webkit-transform: scaleX(-1);
+
+        transform: scaleX(-1);
+
+        filter: FlipH;
+
+        -ms-filter: "FlipH";
+
+
+
+	}
+
+	
+
+	#e1, #e2, #e3, #e4, #e5, #e6, #e7{
+
+	max-width:450px;
+
+	width:450px;
+
+	height:468px;
+
+}
+
+	#e1 li, #e2 li, #e3 li, #e4 li, #e5 li, #e6 li, #e7 li{
+
+	max-width:450px;
+
+	width:auto;
+
+	height:auto;
+
+	padding: 0px 5px;
+
+	margin: 2px 0;
+
+	float:left;
+
+	list-style:none;
+
+}
+
+
+
+
+
+    #contato{
+
+    width:940px; height:468px; margin: 120px auto; 
+
+    background:#0072bc url(img/contato.png) -120px 0px;
+
+    border-radius:10px; padding:10px;
+
+    color:white;	
+
+    transition:background 1s;
+
+    -webkit-transition:background 1s;
+
+    }
+
+
+
+.obrigatorio{
+
+color:#F00;
+
+}
+
+
+
+#solicitacao li{
+
+text-shadow: 2px 2px rgba(0,0,0,0.5);
+
+}
+
+#confirmando {
+
+width:100%;
+
+float:left;
+
+font-size:50%;
+
+}
+
+
+
+#confirmando li{
+
+float:left;
+
+width:50%;
+
+list-style:none;
+
+}
+
+
+

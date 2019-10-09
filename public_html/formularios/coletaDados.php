@@ -170,6 +170,8 @@ $cepempconjok = 0;
 
 $tabela = '---';
 $tc = '---';
+$tc_alternativo = '-';
+$tc_utilizado = '--';
 
 $valorop = '---';
 $coeficienteop = '---';
@@ -180,6 +182,8 @@ $anoop = 0;
 $cliente = -1;
 $simu = -1;
 $tratar = 0;
+
+date_default_timezone_set('America/Sao_Paulo');
 
 $agora =  date('d/m/Y H:i:s');
 //dadosPessoais
@@ -631,8 +635,43 @@ if (isset($_POST['tabela']) ) {
 if (isset($_POST['tc']) ) {
     $tc = $_POST['tc'];
 }
+if (isset($_POST['tc_alternativo']) ) {
+    $tc_alternativo = $_POST['tc_alternativo'];
+}
 if (isset($_POST['valorop']) ) {
     $valorop = $_POST['valorop'];
+	
+    //transforma a string do valor em um valor numerico
+	$vlrFinanciamento = $_POST['valor'] ;
+	$vlrFinanciamento = str_replace('.', '', $vlrFinanciamento);
+	$vlrFinanciamento = str_replace(',','.',$vlrFinanciamento);
+	
+
+//	echo "<table><tr><td>vlrFinanciamento";
+//		echo "</td>";
+//        echo "<td>";
+//        echo $vlrFinanciamento;
+//        echo "</td>";
+//        echo "</tr>";
+//	echo "<table><tr><td>vlrFinanciamento_replace";
+//		echo "</td>";
+//        echo "<td>";
+//        echo $vlrFinanciamento;
+//        echo "</td>";
+//        echo "</tr>";
+	
+//		echo "<tr><td>condição";
+//		echo "</td>";
+//        echo "<td>";
+//        echo ($vlrFinanciamento <= 4000);
+//        echo "</td>";
+//        echo "</tr>";
+//		echo "</table>";
+	if($vlrFinanciamento <= 4000){
+		$tc_utilizado = $tc_alternativo;
+		}else{
+			$tc_utilizado = $tc;	
+	}
 }
 if (isset($_POST['coeficienteop']) ) {
     $coeficienteop = $_POST['coeficienteop'];
@@ -901,6 +940,6 @@ switch ($condicao) {
         break;
 }
 
-//echo "$tabela - $tc - $valorop - $coeficienteop - $parcelasop - $indice - $parcelaop - $anoop";
+echo "$tabela - $tc - $valorop - $coeficienteop - $parcelasop - $indice - $parcelaop - $anoop";
 
 ?>

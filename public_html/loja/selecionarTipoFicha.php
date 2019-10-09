@@ -24,9 +24,10 @@
                                                AND `EstadoHasTabela`.`fkEstado`=".$idEstado,
                            true);
   $consultaTabelasEstado ->data_seek(0);
+  
   while ($retornoTabela = $consultaTabelasEstado->fetch_assoc()){
-    if(strlen($retornoTabela['ref'])!=6)
-      continue;
+    //if(strlen($retornoTabela['ref'])!=6)
+      //continue;
       $repeticao = 0;
       foreach($nomesTabelas as $nomeTabela){
         if($retornoTabela['nome']==$nomeTabela)
@@ -36,8 +37,8 @@
         array_push($tabelas, $retornoTabela);
         array_push($nomesTabelas, $retornoTabela['nome']);  
       }
-    
-    
+    //var_dump($retornoTabela);
+    //var_dump($nomesTabelas);
     // array_push($tabelas, $retornoTabela);
     // array_push($nomesTabelas, $retornoTabela['nome']);
   }
@@ -92,7 +93,8 @@
             <tr>
               <td style="text-align:right;">Método de Financiamento</td>
               <td style="width:50%;">
-                <select name="idTabela" style="width:100%;">
+                <select name="idTabela" required style="width:100%;">
+                  <option selected label=" " disabled value></option>
                   <?php
                     foreach($tabelas as $tabela) 
                       echo "<option value='".$tabela['id']."'>".$tabela['nome']."</option>";
@@ -103,7 +105,8 @@
             <tr>
               <td style="text-align:right;">Ano do Item Financiado</td>
               <td>
-                <select name="anoItem" style="width:100%;">
+                <select name="anoItem" required style="width:100%;">
+                <option selected label=" "  disabled value></option>
                   <?php
                     for($ano=date("Y");$ano>=1900;$ano--) 
                       echo "<option value='$ano'>$ano</option>";

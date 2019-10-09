@@ -1,5 +1,6 @@
 <?php
 //inicio Primeira Pagina
+date_default_timezone_set('America/Sao_Paulo');
 $conteudo = '<!DOCTYPE html>
              <html>
              <head>
@@ -56,7 +57,7 @@ $conteudo .= "<tr><th colspan='40'>DADOS DA GARANTIA</th></tr><tr><td colspan='9
 
 //Dados da Operação
 $conteudo .= "<tr><th colspan='40'>DADOS DA OPERAÇÃO</th></tr>
-              <tr><td colspan='8'>TABELA<br /><span>$tabela</span></td><td colspan='8'>TC<br /><span>$tc</span></td><td colspan='8'>COEFICIENTE<br /><span>$coeficienteop</span></td>  <td colspan='8'>PRAZO<br /><span>$parcelasop</span></td><td colspan='8'>ÍNDICE<br /><span>$indice</span></td></tr>
+              <tr><td colspan='8'>TABELA<br /><span>$tabela</span></td><td colspan='8'>TC<br /><span>$tc_utilizado</span></td><td colspan='8'>COEFICIENTE<br /><span>$coeficienteop</span></td>  <td colspan='8'>PRAZO<br /><span>$parcelasop</span></td><td colspan='8'>ÍNDICE<br /><span>$indice</span></td></tr>
               <tr><td colspan='8'>VALOR FINANCIADO<br /><span>$valorop</span></td><td colspan='8'>PARCELA<br /><span>$parcelaop</span></td><td colspan='8'>1º VECTO.<br />*</td><td colspan='8'>VALOR VENDA<br />*</td><td colspan='8'>VALOR COTAÇÃO<br />*</td></tr>
               <tr><td colspan='40' style='height:auto; padding-bottom: 50px; vertical-align:top; horiz-align: left;'>Observações:<br /><span>$obs</span></td></tr>";
 

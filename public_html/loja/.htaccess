@@ -1,0 +1,5 @@
+# BEGIN custom php.ini PHP52
+<IfModule mod_suphp.c>
+    suPHP_ConfigPath /home1/aquifi88/public_html/loja
+</IfModule>
+# END custom php.ini

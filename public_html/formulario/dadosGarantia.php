@@ -7,7 +7,7 @@
     <li>Ano do Modelo<span class="obrigatorio">*</span> <br /><input id="amodelo" type="number" size="5" maxlength="4" name="amodelo" min="1980" max="2014"></li>                
   </div>
   <div class="categoria">
-    <li id="hasPlaca">Placa<span class="obrigatorio">*</span><br /><input id="placa" name="placa" type='text' maxlength="7" size="8" /></li> 
+    <li id="hasPlaca">Placa<span class="obrigatorio">*</span><br /><input id="placa" name="placa" type='text' size="8" /></li> 
     <li>Chassi <br /><input name="chassi" type='text' maxlength="20" size="20"/></li>
     <li id="hasRenavam">Renavam <br /><input id="renavam" name="renavam" maxlength="15" type='text' size="14"/></li>
   </div>

@@ -6,7 +6,7 @@
   if(isset($_POST['anoItem']))
     $_SESSION['anoItem'] = $_POST['anoItem'];
   
-
+  //echo 'tabela2: '; echo $_SESSION['idTabela'];
   include "../Conexao.php";
   
   $c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
@@ -17,6 +17,7 @@
                 ON tabela.id = tabelasAnoProduto.fkTabelaAlvo
                 WHERE tabelasAnoProduto.fkTabelaOrigem=".$_SESSION['idTabela'],
               true);
+  //echo 'tabela3: '; echo $_SESSION['idTabela'];
   $res->data_seek(0);  
   while ($linha = $res->fetch_assoc()){
     if($_SESSION['anoItem']>=$linha['anoInicial'] && 
@@ -27,7 +28,6 @@
   $fatores = Array();
   $parcelas = Array();
   $fatorParcelaIndice = Array();
-  
   $res = $c->STMTSemPrepare("SELECT *
                 FROM (
                   SELECT *
@@ -68,12 +68,15 @@
     array_push($fatorParcelaIndice, $linha);
   }
   $tc='';
+  $tc_alternativo='';
   $nomeTabela='';
   $anoOP = $_POST['anoItem'];
   $res = $c->STMTSemPrepare("SELECT * FROM `tabela` WHERE `id`=". $_SESSION['idTabela'], true);
   $res->data_seek(0);              
   while ($linha = $res->fetch_assoc()){
     $tc=$linha['tc'];
+	$tc_alternativo=$linha['tc_alternativo'];
+	//echo $tc_alternativo;
     $nomeTabela = $linha['ref'];
   }
 
@@ -170,6 +173,7 @@
     <h3>Envio de Ficha cadastral (Loja)</h3>
     <form id="fichaCadastralViaLoja" name="fichaCadastralViaLoja" method="post" action="../formularios/arquivos.php"> 
       <input id="tc" name="tc" type="hidden" value="<?php echo $tc; ?>"/>
+	  <input id="tc_alternativo" name="tc_alternativo" type="hidden" value="<?php echo $tc_alternativo; ?>"/>
       <div class="gerencia">
         <center>
           <?php include "calculo.php"; ?>

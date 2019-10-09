@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Aqui Financiamentos - Realize seus sonhos</title>
+    <title>Aqui Financiamentos -- Realize seus sonhos</title>
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="favicon.ico" >
     <!-- <link rel="stylesheet" type="text/css" href="style.css">  -->

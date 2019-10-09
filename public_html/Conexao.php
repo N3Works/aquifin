@@ -12,10 +12,10 @@ class Conexao{
   /* Contrutores */
   
   function Conexao($servidor,$sqluser,$sqlpword,$db,$banco){
-    $this->servidor = $servidor;
-    $this->sqluser = $sqluser;
+    $this->servidor =  '216.172.172.44';
+    $this->sqluser = 'aquifi88_aquifin';
     $this->sqlpword = $sqlpword;
-    $this->db = $db;
+    $this->db =  'aquifi88_aquifinanciame';
     $this->banco = $banco;
   }  
   

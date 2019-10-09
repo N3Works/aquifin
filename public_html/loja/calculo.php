@@ -141,7 +141,14 @@
     var fator = "";
     var parcelas = "";
     var parcela = 0;
-    var tc = parseFloat(document.getElementById('tc').value);
+    
+	if(vlrFinanciamento <= 4000){
+		var tc = parseFloat(document.getElementById('tc_alternativo').value);
+	}else{
+		var tc = parseFloat(document.getElementById('tc').value);	
+	}
+	
+	
 
     for(var i = 0; i < fatores.length; i++){
       if(fatores[i][0]==campoFator.value)

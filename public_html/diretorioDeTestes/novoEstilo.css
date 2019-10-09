@@ -1,284 +1,284 @@
-/* RESET e Fonte*/
-*{
-	margin: 0;
-	padding:0;
-	font-family: 'Fjalla One', sans-serif;
-}
-
-input[type="text"],input[type="number"]{
-	height:16px;
-}
-
-
-/*
-body{
-	background-image: -ms-linear-gradient(top, rgb(0,113,188) 3%, rgb(255,255,255) 10%);
-	background-image: -moz-linear-gradient(top, rgb(0,113,188) 3%, rgb(255,255,255) 10%);
-	background-image: -o-linear-gradient(top, rgb(0,113,188) 3%, rgb(255,255,255) 10%);
-	background-image: -webkit-gradient(linear,left bottom, left top,color-stop(0.9, rgb(255,255,255)), color-stop(0.97, rgb(0,113,188)));
-	background-repeat: no-repeat;
-}
-*/
-
-/* Inicio - Barra do topo da Página */
-#barraTopo{
-	background:#333;
-	width:100%;
-	height:50px;	
-	float:left;
-}
-
-#navTopo{
-	margin: 0 auto;
-	width:960px;
-}
-
-#navTopo a{
-	display:block;
-	height:20px;
-	padding: 15px 20px;
-	color: white;
-	text-decoration: none;
-	transition: all 1s;
-	text-shadow: 2px 2px rgba(0, 0, 0, .5);
-	text-transform: uppercase;
-}
-
-#navTopo a:hover{
-	padding: 15px 20px 30px 20px;
-	background: rgba(255, 216, 0, .75);
-}
-
-
-/* Fim - Barra do topo da Página */
-
-/* Logo */
-#top{
-	height:200px;
-	width:960px;
-	float:left;
-	background:url(img/logo.png) no-repeat;
-	height:120px;
-}
-
-/* Menu */
-#menu{
-	width:960px;
-	height:50px;
-	background: url(http://aquifinanciamentos.com.br/2/menutop2.PNG) no-repeat;
-	color:white;
-	display:block;
-	float:left;
-	border-radius:10px;
-	font-size:18px;
-	font-weight:bold;
-}
-
-#menu ul{
-	height: 50px;	
-}
-
-#menu li{
-	list-style:none;
-	float:left;
-	margin: 0;
-}
-
- #menu li:first-child{
-	list-style:none;
-	float:left;
-	margin: 0 0 0 10px;
-}
-
-#menu a{
-	color: white;
-	display:block;
-	padding: 14px 12px 15px 12px;	
-	text-decoration:none;
-}
-
-    
-
-#menu a:hover{
-	background: rgba(100,100,100,.5);
-	color:#ffd800;
-}
-
-
-/* Início - Corpo */
-
-#body{
-	float:left;
-	width:100%;
-}
-
-#tudo {
-	width: 960px;
-	margin:0 auto;
-}
-	
-/* Fim - Corpo */
-
-/* Inicio - Rodapé */
-#rodape {
-	margin-top: -5px;	
-	float:left;
-	width: 100%; 
-	background-color: #333;
-    background-image: -ms-linear-gradient(top, rgb(51,51,51) 20%, rgb(21,21,21) 80%);
-	background-image: -moz-linear-gradient(top, rgb(51,51,51) 20%, rgb(21,21,21) 80%);
-	background-image: -o-linear-gradient(top, rgb(51,51,51) 20%, rgb(21,21,21) 80%);
-	background-image: -webkit-gradient(linear,left top,left bottom,	color-stop(0.2, rgb(51,51,51)),	color-stop(0.8, rgb(21,21,21)));
-	color:white;
-	padding:10px 0;
-	text-align:center;
-	font-weight:normal;
-	font-size:80%;
-}
-#infoRodape{
-	margin:0 auto;
-	width:960px;
-	letter-spacing: 2px;
-}
-#infoRodape bold {
-	font-size:16px;
-	font-weight:400;
-	letter-spacing: 5px;
-}
-
-/* Fim - Rodapé */
-
-
-
-
-/* Ficha Cadastral */
-
-#solicitacao{
-	width:940px;
-	height:468px;
-	margin: 120px auto; 
-	background:#0072bc url(img/sucesso1.png) -22px 0px no-repeat;
-	border-radius:10px;
-	padding:10px;
-	color:white;	
-	transition:background 1s;
-	-webkit-transition:background 1s;
-	overflow:hidden;
-}
-
-
-#etapas{
-	min-width:2540px; 
-	height:468px;	
-	float:left;
-	overflow:hidden;
-}
-
-.etapaHolder{
-	width:940px;
-    height:468px;
-    float:left;
-    list-style:none;
-	margin-right:20px;
-    margin-left: 0px;
-    transition: margin-left 1s;
-    -webkit-transition: margin-left 1s;
-}
-
-.form{
-	background: rgba(0,0,0,.3);
-	border-radius:5px;
-}
-
-.dl, .dr{
-	max-width:460px;
-	width:460px;
-	padding: 10px 5px;
-	clear:both;
-}
-
-.dl, .fl{
-	float:left;
-}
-.dr, .fr{
-	float:right;
-}
-
-.fl, .fr{
-	padding: 0;
-}
-ul.etapa li{
-	max-width:440px;
-	padding: 0px 5px;
-	margin: 2px 0;
-	float:left;
-	list-style:none;
-}
-
-.categoria{
-	float:left;
-	clear:both;
-}
-
-
-/* Capas */
-#capa, #capacontato{
-	position:absolute;
-	top:-5000px;
-	left:-5000px;
-	opacity:0;	
-	background:url(img/capa.png);
-}
-
-#metodo, #aguardeCep{
-	width:450px;
-	margin: 170px auto; 
-	background:#0072bc url(img/sucesso1.png) -22px 0px no-repeat;
-	border-radius:10px;
-	padding:10px;
-	color:white;	
-	transition:background 1s;
-	-webkit-transition:background 1s;
-	text-shadow: 2px 2px rgba(0,0,0,0.5);
-}
-
-#metodo{
-	background:#0072bc url(img/sucesso2.png) 800px 800px no-repeat;
-	height:120px;
-}
-
-input.cliente{
-	font-size:20px;
-	padding: 20px 0;
-	width: 222px;
-	margin-bottom:10px;
-}
-
-input.loja{
-	font-size:16px;
-	padding: 10px 0;
-	width: 222px;
-}
-
-.avanca input{
-	width:32px;
-	height:32px;
-	background-size: 100%;
-	background-color: transparent;
-	background-image: url('img/arrow.png');
-	background-repeat:no-repeat;
-	text-decoration: none;
-	border:0;
-}
-	
-.avanca input, input[type="button"], #sonho{
-	cursor:pointer;
-}
-.volta{
-	-moz-transform: scaleX(-1);
-	-o-transform: scaleX(-1);
-	-webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
-	filter: FlipH;
-	-ms-filter: "FlipH";
+/* RESET e Fonte*/
+*{
+	margin: 0;
+	padding:0;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+input[type="text"],input[type="number"]{
+	height:16px;
+}
+
+
+/*
+body{
+	background-image: -ms-linear-gradient(top, rgb(0,113,188) 3%, rgb(255,255,255) 10%);
+	background-image: -moz-linear-gradient(top, rgb(0,113,188) 3%, rgb(255,255,255) 10%);
+	background-image: -o-linear-gradient(top, rgb(0,113,188) 3%, rgb(255,255,255) 10%);
+	background-image: -webkit-gradient(linear,left bottom, left top,color-stop(0.9, rgb(255,255,255)), color-stop(0.97, rgb(0,113,188)));
+	background-repeat: no-repeat;
+}
+*/
+
+/* Inicio - Barra do topo da Página */
+#barraTopo{
+	background:#333;
+	width:100%;
+	height:50px;	
+	float:left;
+}
+
+#navTopo{
+	margin: 0 auto;
+	width:960px;
+}
+
+#navTopo a{
+	display:block;
+	height:20px;
+	padding: 15px 20px;
+	color: white;
+	text-decoration: none;
+	transition: all 1s;
+	text-shadow: 2px 2px rgba(0, 0, 0, .5);
+	text-transform: uppercase;
+}
+
+#navTopo a:hover{
+	padding: 15px 20px 30px 20px;
+	background: rgba(255, 216, 0, .75);
+}
+
+
+/* Fim - Barra do topo da Página */
+
+/* Logo */
+#top{
+	height:200px;
+	width:960px;
+	float:left;
+	background:url(img/logo.png) no-repeat;
+	height:120px;
+}
+
+/* Menu */
+#menu{
+	width:960px;
+	height:50px;
+	background: url(http://aquifinanciamentos.com.br/2/menutop2.PNG) no-repeat;
+	color:white;
+	display:block;
+	float:left;
+	border-radius:10px;
+	font-size:18px;
+	font-weight:bold;
+}
+
+#menu ul{
+	height: 50px;	
+}
+
+#menu li{
+	list-style:none;
+	float:left;
+	margin: 0;
+}
+
+ #menu li:first-child{
+	list-style:none;
+	float:left;
+	margin: 0 0 0 10px;
+}
+
+#menu a{
+	color: white;
+	display:block;
+	padding: 14px 12px 15px 12px;	
+	text-decoration:none;
+}
+
+    
+
+#menu a:hover{
+	background: rgba(100,100,100,.5);
+	color:#ffd800;
+}
+
+
+/* Início - Corpo */
+
+#body{
+	float:left;
+	width:100%;
+}
+
+#tudo {
+	width: 960px;
+	margin:0 auto;
+}
+	
+/* Fim - Corpo */
+
+/* Inicio - Rodapé */
+#rodape {
+	margin-top: -5px;	
+	float:left;
+	width: 100%; 
+	background-color: #333;
+    background-image: -ms-linear-gradient(top, rgb(51,51,51) 20%, rgb(21,21,21) 80%);
+	background-image: -moz-linear-gradient(top, rgb(51,51,51) 20%, rgb(21,21,21) 80%);
+	background-image: -o-linear-gradient(top, rgb(51,51,51) 20%, rgb(21,21,21) 80%);
+	background-image: -webkit-gradient(linear,left top,left bottom,	color-stop(0.2, rgb(51,51,51)),	color-stop(0.8, rgb(21,21,21)));
+	color:white;
+	padding:10px 0;
+	text-align:center;
+	font-weight:normal;
+	font-size:80%;
+}
+#infoRodape{
+	margin:0 auto;
+	width:960px;
+	letter-spacing: 2px;
+}
+#infoRodape bold {
+	font-size:16px;
+	font-weight:400;
+	letter-spacing: 5px;
+}
+
+/* Fim - Rodapé */
+
+
+
+
+/* Ficha Cadastral */
+
+#solicitacao{
+	width:940px;
+	height:468px;
+	margin: 120px auto; 
+	background:#0072bc url(img/sucesso1.png) -22px 0px no-repeat;
+	border-radius:10px;
+	padding:10px;
+	color:white;	
+	transition:background 1s;
+	-webkit-transition:background 1s;
+	overflow:hidden;
+}
+
+
+#etapas{
+	min-width:2540px; 
+	height:468px;	
+	float:left;
+	overflow:hidden;
+}
+
+.etapaHolder{
+	width:940px;
+    height:468px;
+    float:left;
+    list-style:none;
+	margin-right:20px;
+    margin-left: 0px;
+    transition: margin-left 1s;
+    -webkit-transition: margin-left 1s;
+}
+
+.form{
+	background: rgba(0,0,0,.3);
+	border-radius:5px;
+}
+
+.dl, .dr{
+	max-width:460px;
+	width:460px;
+	padding: 10px 5px;
+	clear:both;
+}
+
+.dl, .fl{
+	float:left;
+}
+.dr, .fr{
+	float:right;
+}
+
+.fl, .fr{
+	padding: 0;
+}
+ul.etapa li{
+	max-width:440px;
+	padding: 0px 5px;
+	margin: 2px 0;
+	float:left;
+	list-style:none;
+}
+
+.categoria{
+	float:left;
+	clear:both;
+}
+
+
+/* Capas */
+#capa, #capacontato{
+	position:absolute;
+	top:-5000px;
+	left:-5000px;
+	opacity:0;	
+	background:url(img/capa.png);
+}
+
+#metodo, #aguardeCep{
+	width:450px;
+	margin: 170px auto; 
+	background:#0072bc url(img/sucesso1.png) -22px 0px no-repeat;
+	border-radius:10px;
+	padding:10px;
+	color:white;	
+	transition:background 1s;
+	-webkit-transition:background 1s;
+	text-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+#metodo{
+	background:#0072bc url(img/sucesso2.png) 800px 800px no-repeat;
+	height:120px;
+}
+
+input.cliente{
+	font-size:20px;
+	padding: 20px 0;
+	width: 222px;
+	margin-bottom:10px;
+}
+
+input.loja{
+	font-size:16px;
+	padding: 10px 0;
+	width: 222px;
+}
+
+.avanca input{
+	width:32px;
+	height:32px;
+	background-size: 100%;
+	background-color: transparent;
+	background-image: url('img/arrow.png');
+	background-repeat:no-repeat;
+	text-decoration: none;
+	border:0;
+}
+	
+.avanca input, input[type="button"], #sonho{
+	cursor:pointer;
+}
+.volta{
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
 }

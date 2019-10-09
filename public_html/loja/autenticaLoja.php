@@ -12,14 +12,13 @@
   $usuario='';
   $nivel='';
   $res = $c->STMTSemPrepare("SELECT * FROM Usuarios WHERE user='$user' AND pword=sha1('$pass')", true);
-  $res->data_seek(0);
+  $res->data_seek(1);
   while ($linha = $res->fetch_assoc()){
-    $usuario = $linha['user'];
-    $nivel = $linha['level'];
-    $uf = $linha['ref'];
-    $id = $linha['id'];
+     $usuario = $linha['user'];
+     $nivel = $linha['level'];
+     $uf = $linha['ref'];
+     $id = $linha['id'];
   }
-  
   if($usuario=='' || $nivel==''){
     header('Location: loginLoja.php?erro=Usuário inexistente ou Senha errada!');
   }else {
@@ -33,6 +32,8 @@
       header('Location: ../gerencia/');    
     if($_SESSION['nivel']==0)       
       header('Location: selecionarTipoFicha.php');
-  }
+    }
+  
+
 ?>
 <?php $c->desconecta(); ?>

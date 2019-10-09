@@ -1,6 +1,6 @@
 <?php
     //Pega os dados postados pelo formulário HTML e os coloca em variaveis
-    if (eregi('tempsite.ws$|aquifinanciamentos.com.br$|hospedagemdesites.ws$|websiteseguro.com$', $_SERVER[HTTP_HOST])) {
+    if (preg_match('/tempsite.ws$|aquifinanciamentos.com.br$|hospedagemdesites.ws$|websiteseguro.com$/i', $_SERVER[HTTP_HOST])) {
         //substitua na linha acima a aprte locaweb.com.br por seu domínio.
         $email_from = 'contato@aquifinanciamentos.com.br';  // Substitua essa linha pelo seu e-mail@seudominio
     } else {
@@ -73,16 +73,20 @@
         $mens .= "$anexo" . $quebra_linha . "";
         $mens .= "--$boundary--" . $quebra_linha . "";
 
-        $headers = "MIME-Version: 1.0" . $quebra_linha . "";
+        $headers = "MIME-Version: 1.1" . $quebra_linha . "";
         $headers .= "From: $email_from " . $quebra_linha . "";
         $headers .= "Return-Path: $email_from " . $quebra_linha . "";
-        $headers .= "Content-type: multipart/mixed; boundary=\"$boundary\"" . $quebra_linha . "";
+		$headers .= "Reply-to: $email_from " . $quebra_linha . "";
+        $headers .= "Content-type: multipart/mixed; charset=iso-8859-1; boundary=\"$boundary\"" . $quebra_linha . "";
         $headers .= "$boundary" . $quebra_linha . "";
 
 
         //if (!mail('n3works@gmail.com', 'Contato - Site', $mens, $headers, "-r" . $email_from))
         //    $envioEmailsOk = false;
-        if (!mail('Contato@aquifinanciamentos.com.br', 'Contato - Site', $mens, $headers, "-r" . $email_from))
+        if (!mail('fichas@aquifinanciamentos.com.br', 'Contato - Site', $mens, $headers, "-r" . $email_from))
+            $envioEmailsOk = false;
+
+		if (!mail('Portocred.sl@hotmail.com', 'Contato - Site', $mens, $headers, "-r" . $email_from))
             $envioEmailsOk = false;
 
         if (isset($emailcontato))
@@ -102,8 +106,12 @@
 
         //if (!mail('n3works@gmail.com', 'Contato Sem anexo - Site', $mensagem, $headers, "-r" . $email_from))
         //    $envioEmailsOk = false;
-        if (!mail('Contato@aquifinanciamentos.com.br', 'Contato Sem anexo - Site', $mensagem, $headers, "-r" . $email_from))
+        if (!mail('fichas@aquifinanciamentos.com.br', 'Contato Sem anexo - Site', $mensagem, $headers, "-r" . $email_from))
             $envioEmailsOk = false;
+
+        if (!mail('Portocred.sl@hotmail.com', 'Contato Sem anexo - Site', $mensagem, $headers, "-r" . $email_from))
+            $envioEmailsOk = false;
+
         if (isset($emailcontato))
             if (!mail($emailcontato, 'Contato Sem anexo - Site', $mensagem, $headers, "-r" . $email_from))
                 $envioEmailsOk = false;

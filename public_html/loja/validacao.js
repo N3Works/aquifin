@@ -333,9 +333,10 @@ function validaAreaText(area) {
             if (!validaNumero('amodelo', 4)) {
                 strMensagemCamposObrigatorios = strMensagemCamposObrigatorios + "\n  Dados da Garantia \\ Ano do modelo;"
             }
-            if (!validaCampoRegEx('placa', /^[a-zA-Z]{3}[0-9]{4}$/)) {
-                strMensagemCamposObrigatorios = strMensagemCamposObrigatorios + "\n  Dados da Garantia \\ Placa;"
-            }
+            //if (!validaCampoRegEx('placa', /^[a-zA-Z]{3}[0-9]{4}$/)) {
+			//if (campoIsNulo('placa')) {
+            //    strMensagemCamposObrigatorios = strMensagemCamposObrigatorios + "\n  Dados da Garantia \\ Placa;"
+            //}
             //if (!validaNumero('renavam')) {
             //    strMensagemCamposObrigatorios = strMensagemCamposObrigatorios + "\n  Dados da Garantia \\ RENAVAM;"
             //}
