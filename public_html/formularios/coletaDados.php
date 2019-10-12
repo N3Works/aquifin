@@ -448,7 +448,7 @@ if (isset($_POST['cidadeconj']) ) {
     $cidadeconj = $_POST['cidadeconj'];
 }
 if (isset($_POST['cepconj']) ) {
-    $cep = $_POST['cepconj'];
+    $cepconj = $_POST['cepconj'];
 }
 if (isset($_POST['ufendconj']) ) {
     $ufendconj = $_POST['ufendconj'];

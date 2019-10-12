@@ -28,8 +28,9 @@
             <div class="alert-box warning" id="msgNotice"><span id="msgErros">Resposta do sistema:</span></br>
                 <?php
                     include 'coletaDados.php';
+                    include 'salvarDados.php';
                     include 'geraArquivo.php';
-                    include 'enviaEmail.php';
+//                    include 'enviaEmail.php';
                 ?>
             </div>
             <div style="text-align: center;" >

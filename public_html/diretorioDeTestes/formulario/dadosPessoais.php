@@ -50,7 +50,7 @@
   </li>
   <li>Telefone Fixo<br />  <input onkeyup="avancaDDD('telfixo', false)" id="dddtelfixo" name="dddtelfixo" type='text' style="width:20px;" size="2" maxlength="2" /><input id="telfixo" name="telfixo" type='text' size="10" maxlength="8" /></li>
   <li>Celular<span class="obrigatorio">*</span><br />  <input onkeyup="avancaDDD('celular', true)" id="dddcelular" name="dddcelular" type='text' style="width:20px;" size="2" maxlength="2" /><input id="celular" name="celular" type='text' size="10" maxlength="8" /></li>             
-  <li>CEP<span class="obrigatorio">*</span> <br /><input onkeyup="buscaCep('cep','pessoal')" id="cep" name="cep" type='text' size="9" maxlength="8" /></li>            
+  <li>CEP<span class="obrigatorio">*</span> <br /><input onkeyup="//buscaCep('cep','pessoal')" id="cep" name="cep" type='text' size="9" maxlength="8" /></li>
   <li style="width:215px">Endereço<span class="obrigatorio">*</span> <br /><input id="endereco" name="endereco" type='text' style="width:215px;"/></li>            
   <li>Nº<span class="obrigatorio">*</span> <br /><input id="num" name="num" type='text' size="3" /></li>  
   <li>Complemento <br /><input name="complemento" type='text' size="3" /></li>   

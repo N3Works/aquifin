@@ -1,0 +1,23 @@
+version: '3'
+services:
+    aquifin-db:
+        container_name: aquifin-db
+        image: mysql:5.5
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: aquifin
+        ports:
+            - "3306:3306"
+    aquifin-app:
+        image: aquifin-app:latest
+        build:
+            dockerfile: ./docker/Dockerfile
+            context: .
+        container_name: aquifin-app
+        links:
+            - aquifin-db:db
+        volumes:
+            - ./public_html:/var/www/html       
+        ports:
+            - "80:80"
+            - "8080:8080"

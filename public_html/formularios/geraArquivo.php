@@ -167,7 +167,7 @@ $conteudo .= '  </body>
 
 
 $hoje = date("d-m-Y - H-i-s");
-$my_file = $nome . ' - ' . $hoje . '.html';
+$my_file = 'propostas/' .$nome . ' - ' . $hoje . '.html';
 $handle = fopen($my_file, 'w') or die('Cannot open file:  ' . $my_file);
 $data = $conteudo;
 fwrite($handle, $data);
