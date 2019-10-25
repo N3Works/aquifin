@@ -11,12 +11,13 @@ class Conexao{
   
   /* Contrutores */
   
-  function Conexao($servidor,$sqluser,$sqlpword,$db,$banco){
+  function Conexao(){
+    //locaweb : $this->servidor =  '186.202.152.71';
     $this->servidor =  '216.172.172.44';
     $this->sqluser = 'aquifi88_aquifin';
-    $this->sqlpword = $sqlpword;
+    $this->sqlpword = 'CharlottE93';
     $this->db =  'aquifi88_aquifinanciame';
-    $this->banco = $banco;
+    $this->banco = 'mysql';
   }  
   
   /* Métodos de Conexão e Desconexão */

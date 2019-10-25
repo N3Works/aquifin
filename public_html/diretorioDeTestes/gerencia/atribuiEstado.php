@@ -27,7 +27,7 @@ else{
 }
 $estado = '';
 
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 $consulta = $c->STMTSemPrepare("SELECT `id` FROM `Estado` WHERE `uf`='$uf'", true);
 $consulta->data_seek(0);
 while ($row = $consulta->fetch_assoc()) 

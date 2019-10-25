@@ -34,7 +34,7 @@ else{
 }
 $tabela = '';
 
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 $consulta = $c->STMTSemPrepare("SELECT id FROM tabela WHERE ref='$ref'", true);
 $consulta->data_seek(0);
 while ($row = $consulta->fetch_assoc()) 

@@ -10,7 +10,7 @@ else
 
 include "../Conexao.php";
 
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 $id = '';
 $consulta = $c->STMTSemPrepare("SELECT * FROM tabela WHERE ref='$e'", true);
 $consulta->data_seek(0);

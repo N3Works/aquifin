@@ -18,7 +18,7 @@ if(isset($_POST['wayback']))
   $wayback = $_POST['wayback'];  
   
 include "../Conexao.php";
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 if($obj=='pword')
    $c->STMTSemPrepare("UPDATE `aquifinanciame`.`$tipo` SET `$obj` = SHA1('$novoValor') WHERE `$tipo`.`id` = $id",false); 
 else 

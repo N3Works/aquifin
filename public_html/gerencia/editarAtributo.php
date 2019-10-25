@@ -22,7 +22,7 @@ if(isset($_GET['Objeto']))
 echo $tipo;
   
 include "../Conexao.php";
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 $dados = Array();
 $consulta = $c->STMTSemPrepare("SELECT * FROM $tipo WHERE id='$id' LIMIT 1", true);
 $consulta->data_seek(0);

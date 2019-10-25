@@ -8,7 +8,7 @@
 		$pass = $_POST['senha'];
 	
 	
-	$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+	$c = new Conexao();;
 	$usuario='';
 	$nivel='';
 	$res = $c->STMTSemPrepare("SELECT * FROM Usuarios WHERE user='$user' AND pword=sha1('$pass')", true);

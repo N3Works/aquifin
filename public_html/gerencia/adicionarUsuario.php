@@ -37,7 +37,7 @@
                   <select name="ref">
                      <option value="">---</option>
                   <?php
-                     $c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+                     $c = new Conexao();;
                      $consultaEstados = $c->STMTSemPrepare('SELECT * FROM Estado ORDER BY uf', true);
                      $consultaEstados->data_seek(0);
                      while ($linha = $consultaEstados->fetch_assoc()){

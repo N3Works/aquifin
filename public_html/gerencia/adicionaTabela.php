@@ -36,7 +36,7 @@ echo $tc . "<br />";
 echo $desc . "<br />";
 
  
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 $c->STMTSemPrepare("INSERT INTO tabela VALUES (NULL , '$nome', '$ref', '$tc', '$desc')", false);
 $c->desconecta();
 header('Location: index.php');

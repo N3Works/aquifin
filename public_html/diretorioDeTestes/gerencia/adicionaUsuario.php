@@ -31,7 +31,7 @@ else{
   header('Location: index.php');
 }  
 
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 $c->STMTSemPrepare("INSERT INTO `aquifinanciame`.`Usuarios` VALUES (NULL ,  '$user',  SHA1('$pword'),  '$level', '$ref')", false);
 echo "<script>alert('Região adicionada com sucesso!');</script>";
 $c->desconecta();

@@ -14,7 +14,7 @@ if(isset($_GET['f']))
 if(isset($_GET['p']))
   $parcelas=$_GET['p'];  
 
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 $c->STMTSemPrepare("DELETE 
                     FROM `TabelaHasIndice`
                     WHERE `fkTabela`=$idTabela

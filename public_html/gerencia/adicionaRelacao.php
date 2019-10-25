@@ -15,7 +15,7 @@ if(isset($_POST['anoInicial']))
 if(isset($_POST['anoFinal']))
   $anoFinal = $_POST['anoFinal'];  
 
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 $c->STMTSemPrepare("INSERT INTO `aquifinanciame`.`tabelasAnoProduto` (`fkTabelaOrigem`, `fkTabelaAlvo`, `anoInicial`, `anoFinal`) VALUES ('$tabelaOrigem', '$tabelaFinal', '$anoInicial', '$anoFinal')", false);
 $c->desconecta();
 header('Location: index.php');

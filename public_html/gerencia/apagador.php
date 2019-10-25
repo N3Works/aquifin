@@ -17,7 +17,7 @@ else{
 	header("Location: index.php");
 }
 
-$c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+$c = new Conexao();;
 if($tipo=='estado'){
 	$c->STMTSemPrepare("DELETE FROM Estado WHERE id='$id' LIMIT 1;", false);
 }else if($tipo=='regiao'){

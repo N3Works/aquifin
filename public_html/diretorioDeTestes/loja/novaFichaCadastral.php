@@ -9,7 +9,7 @@
 
   include "../Conexao.php";
   
-  $c = new Conexao('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame','mysql');
+  $c = new Conexao();;
   
   $res = $c->STMTSemPrepare("SELECT *
                 FROM tabela
