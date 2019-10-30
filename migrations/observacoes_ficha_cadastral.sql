@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS `observacoes_ficha_cadastral` (
   `observacao` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `data_cadastro` DATE,
   `id_ficha_cadastral` int(10) unsigned NOT NULL,
+  `nome_arquivo_proposta` varchar(500) COLLATE utf8_unicode_ci,
 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

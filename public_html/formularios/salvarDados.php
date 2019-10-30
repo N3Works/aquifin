@@ -77,7 +77,7 @@ if ($dddtelcontato && $telcontato) {
 
 $dataAtual = date('Y-m-d');
 
-$c = new mysqli('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame');
+$c = new mysqli('216.172.172.44','aquifi88_aquifin','CharlottE93','aquifi88_aquifinanciame');
 
 $sql = "INSERT INTO ficha_cadastral (
   `situacao`, 
@@ -212,7 +212,8 @@ $sql = "INSERT INTO ficha_cadastral (
   `info_finais_lojacontato`,
   `info_finais_cidadecontato`,
   `info_finais_emailcontato`,
-  `info_finais_observacoes`
+  `info_finais_observacoes`,
+  `nome_arquivo_proposta`
   ) VALUES (
   0,
   '$dataAtual',
@@ -345,7 +346,8 @@ $sql = "INSERT INTO ficha_cadastral (
   '$lojacontato',
   '$cidadecontato',
   '$emailcontato',
-  '$obs')";
+  '$obs',
+  '$nome_arquivo_proposta')";
 
 if ($c->query($sql) === TRUE) {
     echo "Cadastro efetuado com sucesso!";
