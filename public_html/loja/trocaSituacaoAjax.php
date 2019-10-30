@@ -7,7 +7,7 @@
  */
 include "../Conexao.php";
 
-$c = new mysqli('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame');
+$c = new mysqli('216.172.172.44','aquifi88_aquifin','CharlottE93','aquifi88_aquifinanciame');
 
 $sql = "UPDATE ficha_cadastral SET situacao = " . $_POST['situacao'] . ' WHERE id = ' . $_POST['fichaId'];
 

@@ -20,6 +20,10 @@ class Conexao{
     $this->banco = 'mysql';
   }  
   
+  function ConexaoMySqli(){
+    return new mysqli('216.172.172.44','aquifi88_aquifin','CharlottE93','aquifi88_aquifinanciame');
+  }  
+
   /* Métodos de Conexão e Desconexão */
   public function conecta(){
     if($this->banco=="mysql")

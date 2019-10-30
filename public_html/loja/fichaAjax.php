@@ -8,7 +8,10 @@
 
 include "../Conexao.php";
 
-$c = new mysqli('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame');
+//$c = new mysqli('186.202.152.71','aquifinanciame','CharlottE93','aquifinanciame');
+$c = new mysqli('216.172.172.44','aquifi88_aquifin','CharlottE93','aquifi88_aquifinanciame');
+
+//$c = ConexaoMySqli();
 
 $sql = "SELECT * FROM ficha_cadastral";
 $sqlTotal = "SELECT count(*) as total FROM ficha_cadastral";
@@ -59,9 +62,12 @@ if (isset($_REQUEST['datatable']['query']['generalSearch'])) {
     $sqlTotal .= $where;
 }
 
-if (isset($_REQUEST['datatable']['sort'])) {
+if (
+    isset($_REQUEST['datatable']['sort']) 
+    && !empty(trim($_REQUEST['datatable']['sort']['field']))
+) {
     $sql .= ' order by ' . $_REQUEST['datatable']['sort']['field'] . ' ' . $_REQUEST['datatable']['sort']['sort'];
-}
+} 
 
 $page = ($_REQUEST['datatable']['pagination']['page'] ? $_REQUEST['datatable']['pagination']['page'] : 10);
 $perpage = ($_REQUEST['datatable']['pagination']['perpage'] ? $_REQUEST['datatable']['pagination']['perpage'] : 10);
@@ -72,7 +78,12 @@ $resultTotal = $resultTotal->fetch_array();
 $resultTotal = (int)$resultTotal['total'];
 
 $sql .= ' LIMIT '. (($page -1) * $perpage) .','.$perpage ;
+
+
+
 $result = $c->query($sql);
+
+
 
 /* numeric array */
 $fichas = $result->fetch_all(MYSQLI_ASSOC);
@@ -98,5 +109,7 @@ $dataTables = array(
     'draw' => 1,
     'data' => $fichas,
 );
+
+
 
 echo json_encode($dataTables);

@@ -1,8 +1,24 @@
-var dataTable = null;
+//var dataTable = null;
 jQuery(document).ready(function () {
-    dataTable = DatatableChildDataLocalDemo.init();
+    //chama o botão salvar observação
+    $('.salvarObservacao').on('click', function() {
+        var obsFichaCadastral = $('#observacao_modal').find('#observacao').val();
+        var idFicha = $(this).attr('data-rel');        
+        if(!obsFichaCadastral){
+            alert('O campo Observação é de preenchimento obrigatório.');
+            return;
+        }
+        incluirObservacao(obsFichaCadastral, idFicha);
+    });
+
+    dataTable = DatatableChildRemoteDataDemo.init();
 });
 
+
+function chamarModal(id){
+    $('#observacao_modal').modal('show');
+    $('.salvarObservacao').attr('data-rel',id);
+}
 
 function ajustarSituacao(situacao, fichaId) {
 
@@ -18,57 +34,25 @@ function ajustarSituacao(situacao, fichaId) {
     }
 }
 
-//== Class definition
-var DatatableChildDataLocalDemo = function () {
-    //== Private functions
 
-    var subTableInit = function (e) {
-        $('<div/>').attr('id', 'child_data_local_' + e.data.RecordID).appendTo(e.detailCell)
-            .mDatatable({
-                data: {
-                    type: 'local',
-                    source: e.data.Orders,
-                    pageSize: 10,
-                    saveState: {
-                        cookie: true,
-                        webstorage: true
-                    }
-                },
+function incluirObservacao(observacao, fichaId) {
 
-                // layout definition
-                layout: {
-                    theme: 'default',
-                    scroll: true,
-                    height: 300,
-                    footer: false,
-
-                    // enable/disable datatable spinner.
-                    spinner: {
-                        type: 1,
-                        theme: 'default'
-                    }
-                },
-
-                sortable: true,
-
-                // columns definition
-                columns: [{
-                    field: "OrderID",
-                    title: "Order ID",
-                    sortable: false
-                }, {
-                    field: "ShipCountry",
-                    title: "Country",
-                    width: 100
-                }, {
-                    field: "ShipAddress",
-                    title: "Ship Address"
-                }, {
-                    field: "ShipName",
-                    title: "Ship Name"
-                }]
-            });
+    if (confirm('Deseja realmente incluir esta Observação? ')) {
+        $.ajax({
+            url: 'salvarObservacaoAjax.php',
+            method: "POST",
+            data: { observacaoFichaCadastral: observacao, fichaId: fichaId }
+        }).done(function(data) {
+            alert(data);
+            dataTable.load();
+            $('#observacao_modal').modal('hide');
+        });
     }
+}
+
+//== Class definition
+var DatatableChildRemoteDataDemo = function () {
+    //== Private functions
 
     // demo initializer
     var mainTableInit = function () {
@@ -79,6 +63,8 @@ var DatatableChildDataLocalDemo = function () {
                 source: {
                     read: {
                         url: 'fichaAjax.php',
+                        
+                        
                         // params: {
                             // custom headers
                             // headers: { 'x-my-custom-header': $('.filtrarSituacao').val(), 'x-test-header': 'the value'},
@@ -207,7 +193,7 @@ var DatatableChildDataLocalDemo = function () {
 						    	<a class="dropdown-item" onclick="ajustarSituacao(4, '+row.id+')" href="javascript:void(0)"><i class="la la-times"></i> Reprovada</a>\
 						  	</div>\
 						</div>\
-						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit details">\
+						<a href="javascript:void(0)" onclick="chamarModal('+row.id+')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit details">\
 							<i class="la la-comment"></i>\
 						</a>\
 					';
@@ -217,10 +203,12 @@ var DatatableChildDataLocalDemo = function () {
 
         var query = datatable.getDataSourceQuery();
 
-        $('#m_form_search').on('keyup', function (e) {
+         $('#m_form_search').on('keyup', function (e) {
             datatable.search({ text: $(this).val().toLowerCase() ,filtrarSituacao: $('.filtrarSituacao').val() });
         }).val(query.generalSearch.text);
-
+  
+        
+        console.log('query.generalSearch:', query.generalSearch);
         $('.filtrarSituacao').on('change', function (e) {
             datatable.search({text: $('#m_form_search').val(),filtrarSituacao: $(this).val() });
         }).val(query.generalSearch.filtrarSituacao);
@@ -230,6 +218,110 @@ var DatatableChildDataLocalDemo = function () {
 
         return datatable;
     };
+
+
+    var subTableInit = function (e) {
+        console.log('e',e);
+        console.log('e.currentTarget.dataset.value',e.currentTarget.dataset.value);
+        $('<div/>').attr('id', 'child_data_ajax_' + e.currentTarget.dataset.value).appendTo(e.detailCell)
+            .mDatatable({
+                data: {
+                    type: 'remote',
+                    source: {
+                        read: {
+                            url: 'buscarObservacaoAjax.php',
+                            //headers: { 'x-my-custom-header': 'some value', 'x-test-header': 'the value'},
+								params: {
+									// custom query params
+									query: {
+										generalSearch: '',
+										id: e.currentTarget.dataset.value
+									}
+								}
+                            /* params: {
+                                // custom headers
+                                // headers: { 'x-my-custom-header': $('.filtrarSituacao').val(), 'x-test-header': 'the value'},
+                                // custom query params
+                                query: {
+                                    filter:$('.m-datatable__toggle-subtable').attr('data-value')
+                                    //perPage: $('.m-datatable__pager-size').val(),
+                                    //  filtroSituacao: .val(),
+                                    // someParam: 'someValue',
+                                    // token: 'token-value'
+                                }
+                             } */
+                        }
+                    },
+                    //pageSize: 10,
+                    saveState: {
+                        cookie: true,
+                        webstorage: true
+                    },
+                    // processing: true,
+                    serverPaging: false,
+                    serverFiltering: false,
+                    serverSorting: false
+
+                },
+                pagination:false,
+                sortable:false,
+                searchDelay:false,
+               
+                translate: {
+                    records: {
+                        processing: 'Aguarde...',
+                        noRecords: 'Nenhum registro encontrado.'
+                    },
+                    /* toolbar: {
+                        pagination: {
+                            items: {
+                                default: {
+                                    first: 'Primeira',
+                                    prev: 'Anterior',
+                                    next: 'Próxima',
+                                    last: 'Última',
+                                    more: 'Mais páginas',
+                                    input: 'Número',
+                                    select: 'Mostrar'
+                                },
+                                info: 'Mostrando {{start}} - {{end}} de {{total}} registros'
+                            }
+                        }
+                    } */
+                },
+                // layout definition
+                layout: {
+                    theme: 'default',
+                    scroll: true,
+                    //height: 300,
+                    footer: false,
+
+                    // enable/disable datatable spinner.
+                    spinner: {
+                        type: 1,
+                        theme: 'default'
+                    }
+                },
+
+                // columns definition
+                columns: [{
+                    field: "id",
+                    title: "",
+                    width: 50,
+                    sortable: false,
+                    visible: false,
+                    hidden: true
+                },{
+                    field: "data_cadastro",
+                    title: "Data",
+                    width: 200,
+                    sortable: false
+                }, {
+                    field: "observacao",
+                    title: "Observação"
+                }]
+            });
+    }
 
     return {
         //== Public functions
