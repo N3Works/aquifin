@@ -20,6 +20,12 @@ function chamarModal(id){
     $('.salvarObservacao').attr('data-rel',id);
 }
 
+function imprimirProposta(nomeDoArquivo){
+    var url = '../formularios/propostas/' + nomeDoArquivo;
+    var win = window.open(url, '_blank');
+    win.focus();
+}
+        
 function ajustarSituacao(situacao, fichaId) {
 
     if (confirm('Deseja realmente alterar a situação da ficha? ')) {
@@ -160,6 +166,13 @@ var DatatableChildRemoteDataDemo = function () {
                 field: "dados_pessoais_ufend",
                 title: "UF"
             }, {
+                field: "nome_arquivo_proposta",
+                title: "nome_arquivo_proposta",
+                width: 0,
+                height:0,
+                responsive: {hidden: 'xl'}
+            },
+            {
                 field: "situacao",
                 title: 'Situação',
               template: function (row) {
@@ -185,7 +198,7 @@ var DatatableChildRemoteDataDemo = function () {
                     return '\
 						<div class="dropdown '+ dropup +'">\
 							<a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" title="Trocar situação">\
-                                <i class="la la-edit"></i>\
+                                <i class="la la-list-alt"></i>\
                             </a>\
 						  	<div class="dropdown-menu dropdown-menu-right">\
 						    	<a class="dropdown-item" onclick="ajustarSituacao(3, '+row.id+')" href="javascript:void(0)"><i class="la la-info"></i> Pendências</a>\
@@ -193,12 +206,16 @@ var DatatableChildRemoteDataDemo = function () {
 						    	<a class="dropdown-item" onclick="ajustarSituacao(4, '+row.id+')" href="javascript:void(0)"><i class="la la-times"></i> Reprovada</a>\
 						  	</div>\
 						</div>\
-						<a href="javascript:void(0)" onclick="chamarModal('+row.id+')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit details">\
+						<a href="javascript:void(0)" onclick="chamarModal('+row.id+')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Adicionar observação">\
 							<i class="la la-comment"></i>\
+                        </a>\
+                        <a href="javascript:void(0)" onclick="imprimirProposta(\''+row.nome_arquivo_proposta+'\')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Imprimir proposta">\
+							<i class="la la-print"></i>\
 						</a>\
 					';
                 }
-            }]
+            }
+            ]
         });
 
         var query = datatable.getDataSourceQuery();
@@ -234,8 +251,7 @@ var DatatableChildRemoteDataDemo = function () {
 								params: {
 									// custom query params
 									query: {
-										generalSearch: '',
-										id: e.currentTarget.dataset.value
+										id_ficha_cadastral: e.currentTarget.dataset.value
 									}
 								}
                             /* params: {
@@ -304,14 +320,14 @@ var DatatableChildRemoteDataDemo = function () {
                 },
 
                 // columns definition
-                columns: [{
+                columns: [/* {
                     field: "id",
                     title: "",
                     width: 50,
                     sortable: false,
                     visible: false,
                     hidden: true
-                },{
+                }, */{
                     field: "data_cadastro",
                     title: "Data",
                     width: 200,
