@@ -25,6 +25,30 @@ function imprimirProposta(nomeDoArquivo){
     var win = window.open(url, '_blank');
     win.focus();
 }
+
+function ImprimirRelatorio(elem)
+{
+    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+    
+    
+    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+    mywindow.document.write('</head><body onload="window.print()">');
+    mywindow.document.write( "<link rel=\"stylesheet\" href=\"/layout/metronic_v5.0.3/theme/dist/html/default/assets/vendors/base/vendors.bundle.css\" type=\"text/css\" media=\"all\"/>" );
+    mywindow.document.write( "<link rel=\"stylesheet\" href=\"/layout/metronic_v5.0.3/theme/dist/html/default/assets/demo/default/base/style.bundle.css\" type=\"text/css\" media=\"all\"/>" );
+    mywindow.document.write('<h1>' + document.title  + '</h1>');
+    mywindow.document.write(document.getElementById(elem).innerHTML);
+    mywindow.document.write('</body></html>');
+
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10*/
+    mywindow.print()
+    //setTimeout(function(){mywindow.print();},1000);
+
+    //mywindow.close();
+
+    return true;
+}
         
 function ajustarSituacao(situacao, fichaId) {
 

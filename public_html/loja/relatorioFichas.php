@@ -32,8 +32,8 @@ if(isset($_POST['anoItem']))
     </script>
     <!--end::Web font -->
     <!--begin::Base Styles -->
-    <link href="/layout/metronic_v5.0.3/theme/dist/html/default/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="/layout/metronic_v5.0.3/theme/dist/html/default/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/layout/metronic_v5.0.3/theme/dist/html/default/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/layout/metronic_v5.0.3/theme/dist/html/default/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" media="all"/>
     <!--end::Base Styles -->
     <link rel="shortcut icon" href="/layout/metronic_v5.0.3/theme/dist/html/default/assets/demo/default/media/img/logo/favicon.ico" />
 </head>
@@ -115,7 +115,7 @@ if(isset($_POST['anoItem']))
             <!-- END: Subheader -->
             <div class="m-content">
                 <div class="m-portlet m-portlet--mobile">
-                    <div class="m-portlet__body">
+                    <div class="m-portlet__body" id="corpoRelatorio">
                         <!--begin: Search Form -->
                         <div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
                             <div class="row align-items-center">
@@ -145,7 +145,7 @@ if(isset($_POST['anoItem']))
                                     </div>
                                 </div>
                                 <div class="col-xl-4 order-1 order-xl-2 m--align-right">
-                                    <a href="#" class="btn btn-primary m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+                                    <a href="#" onclick="ImprimirRelatorio('corpoRelatorio')" class="btn btn-primary m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
 												<span>
 													<i class="la la-download"></i>
 													<span>
