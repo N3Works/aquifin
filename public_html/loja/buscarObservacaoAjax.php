@@ -6,9 +6,8 @@ include "../Conexao.php";
 $c = new mysqli('216.172.172.44','aquifi88_aquifin','CharlottE93','aquifi88_aquifinanciame');
 
 //$c = ConexaoMySqli();
-
-$sql = "SELECT * FROM observacoes_ficha_cadastral";
-
+$sql = "SELECT * FROM observacoes_ficha_cadastral where id_ficha_cadastral = " . $_GET['id'];
+$sql.= ' order by id desc';
 $result = $c->query($sql);
 
 /* numeric array */
