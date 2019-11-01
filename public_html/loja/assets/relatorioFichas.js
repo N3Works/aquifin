@@ -1,4 +1,4 @@
-var dataTable = null;
+//var dataTable = null;
 jQuery(document).ready(function () {
     //chama o botão salvar observação
     $('.salvarObservacao').on('click', function() {
@@ -8,7 +8,7 @@ jQuery(document).ready(function () {
             alert('O campo Observação é de preenchimento obrigatório.');
             return;
         }
-        incluirObservacao(obsFichaCadastral, idFicha);
+        incluirObservacao(obsFichaCadastral, idFicha) ;
     });
 
     dataTable = DatatableChildRemoteDataDemo.init();
@@ -288,6 +288,7 @@ var DatatableChildRemoteDataDemo = function () {
                     field: "situacao",
                     title: 'Situação',
                     template: function (row) {
+                        
                         var status = {
                             1: {'title': 'Aprovada', 'classe': 'm-badge--success'},
                             2: {'title': 'Nova', 'classe': ' m-badge--default'},
@@ -295,7 +296,14 @@ var DatatableChildRemoteDataDemo = function () {
                             4: {'title': 'Reprovada', 'classe': ' m-badge--danger'}
                         };
 
-                        return '<span class="m-badge ' + status[row.situacao].classe + ' m-badge--wide">' + status[row.situacao].title + '</span>';
+                         $blink_new ='';
+                         $blink_class= '';
+                        if (status[row.situacao].title == 'Nova') {
+                            $blink_style= 'style="background-color=blue"';
+                            $blink_class= 'invalid';
+                        }
+
+                        return '<span class="m-badge ' + status[row.situacao].classe + ' m-badge--wide ' + $blink_class + '" >' + status[row.situacao].title + '</span>';
                     }
                 }, {
                     field: "Actions",
@@ -331,6 +339,7 @@ var DatatableChildRemoteDataDemo = function () {
         });
 
         var query = datatable.getDataSourceQuery();
+        if (!query.generalSearch) {query.generalSearch = '';}
 
         $('#m_form_search').on('keyup', function (e) {
             datatable.search({ text: $(this).val().toLowerCase() ,filtrarSituacao: $('.filtrarSituacao').val() });

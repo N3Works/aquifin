@@ -10,8 +10,16 @@ $sql = "SELECT * FROM observacoes_ficha_cadastral where id_ficha_cadastral = " .
 $sql.= ' order by id desc';
 $result = $c->query($sql);
 
+
+//echo $sql;
+
 /* numeric array */
-$observacoes = $result->fetch_all(MYSQLI_ASSOC);
+//$observacoes = $result->fetch_all(MYSQLI_ASSOC);
+
+$observacoes = array();
+while($row = $result->fetch_assoc()){
+    $observacoes[] = $row;
+}
 
 /* free result set */
 $result->close();

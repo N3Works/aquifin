@@ -30,7 +30,7 @@
                     include 'coletaDados.php';
                     include 'geraArquivo.php';
                     include 'salvarDados.php';
-//                    include 'enviaEmail.php';
+                    include 'enviaEmail.php';
                 ?>
             </div>
             <div style="text-align: center;" >

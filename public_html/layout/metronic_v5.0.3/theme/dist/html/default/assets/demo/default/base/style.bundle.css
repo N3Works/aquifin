@@ -39,7 +39,31 @@ $table-inverse-color:           $body-bg !default;
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@media print {
+
+ @-webkit-keyframes invalid {
+  from { background-color: blue; }
+  to { background-color: inherit; }
+}
+@-moz-keyframes invalid {
+  from { background-color: blue; }
+  to { background-color: inherit; }
+}
+@-o-keyframes invalid {
+  from { background-color: blue; }
+  to { background-color: inherit; }
+}
+@keyframes invalid {
+  from { background-color: blue; }
+  to { background-color: inherit; }
+}
+  .invalid {
+    -webkit-animation: invalid 5s infinite; /* Safari 4+ */
+    -moz-animation:    invalid 5s infinite; /* Fx 5+ */
+    -o-animation:      invalid 5s infinite; /* Opera 12+ */
+    animation:         invalid 5s infinite; /* IE 10+ */
+  }
+
+ @media print {
   *,
   *::before,
   *::after {
@@ -31382,3 +31406,4 @@ body.m-content--skin-light2 {
       text-align: center;
       float: none;
       margin: 0 auto; } }
+      

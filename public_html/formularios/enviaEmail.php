@@ -51,6 +51,7 @@
         //$fp = fopen($_FILES["arquivo"]["tmp_name"],"rb");
         //$arch = $my_file;
         $fp = fopen($my_file, "rb");
+        
         //$anexo = fread($fp,filesize($_FILES["arquivo"]["tmp_name"]));
         $anexo = fread($fp, filesize($my_file));
         $anexo = base64_encode($anexo);

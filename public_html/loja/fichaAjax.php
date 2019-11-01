@@ -13,7 +13,7 @@ $c = new mysqli('216.172.172.44','aquifi88_aquifin','CharlottE93','aquifi88_aqui
 
 //$c = ConexaoMySqli();
 
-$sql = "SELECT * FROM ficha_cadastral";
+$sql = "SELECT * FROM ficha_cadastral"; // WHERE (situacao is not null) AND (nome_arquivo_proposta is not null)";
 $sqlTotal = "SELECT count(*) as total FROM ficha_cadastral";
 
 if (isset($_REQUEST['datatable']['query']['generalSearch'])) {
@@ -24,7 +24,7 @@ if (isset($_REQUEST['datatable']['query']['generalSearch'])) {
         $search = $_REQUEST['datatable']['query']['generalSearch']['text'];
         if ($search) {
             if (strpos($search, '/') === false) {
-                $where = ' WHERE ( dados_pessoais_nome LIKE \'%'. $search .'%\' 
+                $where = ' AND ( dados_pessoais_nome LIKE \'%'. $search .'%\' 
                  OR data_cadastro LIKE \'%'. $search .'%\' 
                  OR info_finais_lojacontato LIKE \'%'. $search .'%\' 
                  OR dados_pessoais_cidade LIKE \'%'. $search .'%\' 
@@ -62,9 +62,11 @@ if (isset($_REQUEST['datatable']['query']['generalSearch'])) {
     $sqlTotal .= $where;
 }
 
+$hasOrderByField = trim($_REQUEST['datatable']['sort']['field']);
+
 if (
     isset($_REQUEST['datatable']['sort']) 
-    && !empty(trim($_REQUEST['datatable']['sort']['field']))
+    && !empty($hasOrderByField)
 ) {
     $sql .= ' order by ' . $_REQUEST['datatable']['sort']['field'] . ' ' . $_REQUEST['datatable']['sort']['sort'];
 } 
@@ -86,7 +88,13 @@ $result = $c->query($sql);
 
 
 /* numeric array */
-$fichas = $result->fetch_all(MYSQLI_ASSOC);
+//$fichas = $result->fetch_all(MYSQLI_ASSOC);
+$fichas = array();
+while($row = $result->fetch_assoc()){
+    $fichas[] = $row;
+}
+
+//echo $sql;
 
 /* free result set */
 $result->close();
