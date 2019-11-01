@@ -215,7 +215,7 @@ $sql = "INSERT INTO ficha_cadastral (
   `info_finais_observacoes`,
   `nome_arquivo_proposta`
   ) VALUES (
-  0,
+  2,
   '$dataAtual',
   '$nome',
   '$nascimento',
