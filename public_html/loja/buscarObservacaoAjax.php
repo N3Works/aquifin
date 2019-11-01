@@ -30,18 +30,16 @@ $c->close();
 $dataTables = array(
     'meta' => array(
     
-    /*    'page' => $page,
-        'perpage' => $perpage,
-        'sort' => $_REQUEST['datatable']['sort']['sort'],
-        'field' => $_REQUEST['datatable']['sort']['field'],
-        'pages' => round($resultTotal / $perpage),
-        'total' => $resultTotal,
-        'end' => ( $endPage < $resultTotal ? $endPage : $resultTotal), */
+//    'page' => $page,
+//        'perpage' => $perpage,
+//        'sort' => $_REQUEST['datatable']['sort']['sort'],
+//        'field' => $_REQUEST['datatable']['sort']['field'],
+//        'pages' => round($resultTotal / $perpage),
+//        'total' => $resultTotal,
+//        'end' => ( $endPage < $resultTotal ? $endPage : $resultTotal),
     ),
     'draw' => 1,
     'data' => $observacoes,
 );
-
-
 
 echo json_encode($dataTables);

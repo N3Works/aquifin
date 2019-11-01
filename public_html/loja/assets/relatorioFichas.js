@@ -244,7 +244,7 @@ var DatatableChildRemoteDataDemo = function () {
             pagination: true,
 
             detail: {
-                title: 'Load sub table',
+                title: 'Observações',
                 content: subTableInit
             },
 
@@ -290,20 +290,21 @@ var DatatableChildRemoteDataDemo = function () {
                     template: function (row) {
                         
                         var status = {
+                            0: {'title': 'Nova', 'classe': ' m-badge--default'},
                             1: {'title': 'Aprovada', 'classe': 'm-badge--success'},
                             2: {'title': 'Nova', 'classe': ' m-badge--default'},
                             3: {'title': 'Pendências', 'classe': ' m-badge--warning'},
                             4: {'title': 'Reprovada', 'classe': ' m-badge--danger'}
                         };
 
-                         $blink_new ='';
-                         $blink_class= '';
-                        if (status[row.situacao].title == 'Nova') {
-                            $blink_style= 'style="background-color=blue"';
-                            $blink_class= 'invalid';
+                         var blink_new ='';
+                         // var blink_class= '';
+                        if (status[row.situacao]['title'] == 'Nova') {
+                            blink_new= 'style="background-color=blue"';
+                            // blink_class= 'invalid';
                         }
 
-                        return '<span class="m-badge ' + status[row.situacao].classe + ' m-badge--wide ' + $blink_class + '" >' + status[row.situacao].title + '</span>';
+                        return '<span class="m-badge ' + status[row.situacao].classe + ' m-badge--wide ' + blink_new + '" >' + status[row.situacao].title + '</span>';
                     }
                 }, {
                     field: "Actions",
