@@ -135,10 +135,11 @@ if(isset($_POST['anoItem']))
                                             <div class="m-input-icon m-input-icon--left">
                                                 <select class="filtrarSituacao form-control select2 select2-container select2-container--default select2-container--focus" style="padding-left: 0.3px;">
                                                     <option value="" checked="checked">Filtre por uma situação</option>
-                                                    <option value="1" style="background-color: #34bfa3;">Aprovada</option>
-                                                    <option value="2" style="background-color: #eaeaea;">Nova</option>
-                                                    <option value="3" style="background-color: #ffb822;">Pendências</option>
-                                                    <option value="4" style="background-color: #f4516c;">Reprovada</option>
+                                                    <option value="1">Aprovada</option>
+                                                    <option value="2">Nova</option>
+                                                    <option value="5">Em Análise</option>
+                                                    <option value="3">Pendências</option>
+                                                    <option value="4">Reprovada</option>
                                                 </select>
                                             </div>
                                         </div>

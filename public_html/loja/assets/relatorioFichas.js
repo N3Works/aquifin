@@ -20,18 +20,28 @@ function chamarModal(id){
     $('.salvarObservacao').attr('data-rel',id);
 }
 
-function imprimirProposta(nomeDoArquivo){
-    var url = '../formularios/propostas/' + nomeDoArquivo;
-    var win = window.open(url, '_blank');
-    win.focus();
+function imprimirProposta(nomeDoArquivo,fichaId){
+    if (confirm('Deseja realmente imprimir a ficha? A Situação mudará para EM ANÁLISE. ')) {
+        $.ajax({
+            url: 'trocaSituacaoAjax.php',
+            method: "POST",
+            data: { situacao: 5, fichaId: fichaId }
+        }).done(function(data) {
+            alert(data);
+            var url = '../formularios/propostas/' + nomeDoArquivo;
+            var win = window.open(url, '_blank');
+            win.focus();
+            dataTable.load();
+        });
+    }
 }
 
 function ImprimirRelatorio(elem)
 {
-    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+    //window.location = 'imprimirRelFichas.php';
 
-    
-    
+    /*     var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
     mywindow.document.write('<html><head><title>' + document.title  + '</title>');
     mywindow.document.write('</head><body onload="window.print()">');
     mywindow.document.write( "<link rel=\"stylesheet\" href=\"/layout/metronic_v5.0.3/theme/dist/html/default/assets/vendors/base/vendors.bundle.css\" type=\"text/css\" media=\"all\"/>" );
@@ -41,13 +51,13 @@ function ImprimirRelatorio(elem)
     mywindow.document.write('</body></html>');
 
     mywindow.document.close(); // necessary for IE >= 10
-    mywindow.focus(); // necessary for IE >= 10*/
+    mywindow.focus(); // necessary for IE >= 10
     mywindow.print()
     //setTimeout(function(){mywindow.print();},1000);
 
     //mywindow.close();
-
-    return true;
+*/
+    return true; 
 }
         
 function ajustarSituacao(situacao, fichaId) {
@@ -175,8 +185,7 @@ var DatatableChildRemoteDataDemo = function () {
     // demo initializer
     var mainTableInit = function () {
         var datatable = $('.m_datatable').mDatatable({
-
-            data: {
+            data: { 
                 type: 'remote',
                 source: {
                     read: {
@@ -230,7 +239,7 @@ var DatatableChildRemoteDataDemo = function () {
                     }
                 }
             },
-
+           
             // layout definition
             layout: {
                 theme: 'default',
@@ -247,6 +256,27 @@ var DatatableChildRemoteDataDemo = function () {
                 title: 'Observações',
                 content: subTableInit
             },
+            rows: {
+                afterTemplate: function(row,data, index){
+                    console.log('afterTemplate');
+                    if (row.situacao=2) {
+                        $('.m-datatable__toggle-subtable[data-value="'+row.id+'"]').closest('tr').find('td').addClass('invalid');
+                        //$(row).css('background-color', 'red');
+                    }
+                }
+                /* callback: function(row, data, index) {
+                    console.log('seqw',datatable.getOption());
+                    console.log(datatable.getOption('columns'));
+                    console.log(datatable.getOption('columns.1.template'));
+                    if (row.situacao=2) {
+                        $('.m-datatable__toggle-subtable[data-value="'+row.id+'"]').closest('tr').find('td').addClass('invalid');
+                        //$(row).css('background-color', 'red');
+                    }
+                    row.cells[0].innerText = "teste";
+                } */
+                /* // auto hide columns, if rows overflow. work on non locked columns
+                autoHide: false */
+            },
 
             // columns definition
             columns: [{
@@ -254,10 +284,16 @@ var DatatableChildRemoteDataDemo = function () {
                 title: "",
                 sortable: false,
                 width: 20,
-                textAlign: 'center' // left|right|center,
+                textAlign: 'center', // left|right|center,
             }, {
                 field: "dados_pessoais_nome",
-                title: "Nome"
+                title: "Nome",
+                afterTemplate: function(row) {
+                    if (row.situacao=2) {
+                        $('.m-datatable__toggle-subtable[data-value="'+row.id+'"]').closest('tr').find('td').addClass('invalid');
+                    }
+                    return row.dados_pessoais_nome;},
+
             }, {
                 field: "data_cadastro",
                 title: "Data",
@@ -283,59 +319,59 @@ var DatatableChildRemoteDataDemo = function () {
                 width: 0,
                 height:0,
                 responsive: {hidden: 'xl'}
-            },
-                {
-                    field: "situacao",
-                    title: 'Situação',
-                    template: function (row) {
-                        
-                        var status = {
-                            0: {'title': 'Nova', 'classe': ' m-badge--default'},
-                            1: {'title': 'Aprovada', 'classe': 'm-badge--success'},
-                            2: {'title': 'Nova', 'classe': ' m-badge--default'},
-                            3: {'title': 'Pendências', 'classe': ' m-badge--warning'},
-                            4: {'title': 'Reprovada', 'classe': ' m-badge--danger'}
-                        };
+            }, {
+                field: "situacao",
+                title: 'Situação',
+                template: function (row) {
+                    
+                    var status = {
+                        0: {'title': 'Nova', 'classe': ' m-badge--default'},
+                        1: {'title': 'Aprovada', 'classe': 'm-badge--success'},
+                        2: {'title': 'Nova', 'classe': ' m-badge--default'},
+                        3: {'title': 'Pendências', 'classe': ' m-badge--warning'},
+                        4: {'title': 'Reprovada', 'classe': ' m-badge--danger'},
+                        5: {'title': 'Em Análise', 'classe': ' m-badge--info'}
+                    };
 
-                         var blink_new ='';
-                         // var blink_class= '';
-                        if (status[row.situacao]['title'] == 'Nova') {
-                            blink_new= 'style="background-color=blue"';
-                            // blink_class= 'invalid';
-                        }
-
-                        return '<span class="m-badge ' + status[row.situacao].classe + ' m-badge--wide ' + blink_new + '" >' + status[row.situacao].title + '</span>';
+                    var blink_style ='';
+                    var blink_class= '';
+                    if (status[row.situacao].title == 'Nova') {
+                        blink_style = 'style="background-color=blue"';
+                        blink_class = 'invalid';
                     }
-                }, {
-                    field: "Actions",
-                    width: 110,
-                    title: "Actions",
-                    sortable: false,
-                    overflow: 'visible',
-                    template: function (row) {
 
-                        var dropup = (row.getDatatable().getPageSize() - row.getIndex()) <= 4 ? 'dropup' : '';
-
-                        return '\
-                                <div class="dropdown '+ dropup +'">\
-                                    <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" title="Trocar situação">\
-                                        <i class="la la-list-alt"></i>\
-                                    </a>\
-                                    <div class="dropdown-menu dropdown-menu-right">\
-                                        <a class="dropdown-item" onclick="ajustarSituacao(3, '+row.id+')" href="javascript:void(0)"><i class="la la-info"></i> Pendências</a>\
-                                        <a class="dropdown-item" onclick="ajustarSituacao(1, '+row.id+')" href="javascript:void(0)"><i class="la la-check"></i> Aprovada</a>\
-                                        <a class="dropdown-item" onclick="ajustarSituacao(4, '+row.id+')" href="javascript:void(0)"><i class="la la-times"></i> Reprovada</a>\
-                                    </div>\
-                                </div>\
-                                <a href="javascript:void(0)" onclick="chamarModal('+row.id+')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Adicionar observação">\
-                                    <i class="la la-comment"></i>\
-                                </a>\
-                                <a href="javascript:void(0)" onclick="imprimirProposta(\''+row.nome_arquivo_proposta+'\')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Imprimir proposta">\
-                                    <i class="la la-print"></i>\
-                                </a>\
-                            ';
-                    }
+                    return '<span class="m-badge ' + status[row.situacao].classe + ' m-badge--wide ' + blink_class + '" >' + status[row.situacao].title + '</span>';
                 }
+            }, {
+                field: "Actions",
+                width: 110,
+                title: "Actions",
+                sortable: false,
+                overflow: 'visible',
+                template: function (row) {
+
+                    var dropup = (row.getDatatable().getPageSize() - row.getIndex()) <= 4 ? 'dropup' : '';
+
+                    return '\
+                            <div class="dropdown '+ dropup +'">\
+                                <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" title="Trocar situação">\
+                                    <i class="la la-list-alt"></i>\
+                                </a>\
+                                <div class="dropdown-menu dropdown-menu-right">\
+                                    <a class="dropdown-item" onclick="ajustarSituacao(3, '+row.id+')" href="javascript:void(0)"><i class="la la-info"></i> Pendências</a>\
+                                    <a class="dropdown-item" onclick="ajustarSituacao(1, '+row.id+')" href="javascript:void(0)"><i class="la la-check"></i> Aprovada</a>\
+                                    <a class="dropdown-item" onclick="ajustarSituacao(4, '+row.id+')" href="javascript:void(0)"><i class="la la-times"></i> Reprovada</a>\
+                                </div>\
+                            </div>\
+                            <a href="javascript:void(0)" onclick="chamarModal('+row.id+')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Adicionar observação">\
+                                <i class="la la-comment"></i>\
+                            </a>\
+                            <a href="javascript:void(0)" onclick="imprimirProposta(\''+row.nome_arquivo_proposta+'\','+row.id+')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Imprimir proposta">\
+                                <i class="la la-print"></i>\
+                            </a>\
+                        ';
+                }
+            }
             ]
         });
 
