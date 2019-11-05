@@ -15,7 +15,7 @@ if(isset($_POST['anoItem']))
 <head>
     <meta charset="utf-8" />
     <title>
-        Metronic | Local Data
+        Aqui financiamentos | Relatório de Fichas
     </title>
     <meta name="description" content="Child datatable from local data">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

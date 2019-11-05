@@ -75,7 +75,7 @@ if ($dddtelcontato && $telcontato) {
     $telContatoSalvar = '(' . $dddtelcontato . ') '. $telcontato;
 }
 
-$dataAtual = date('Y-m-d');
+$dataAtual = date('Y-m-d H:i:s');
 
 $c = new mysqli('216.172.172.44','aquifi88_aquifin','CharlottE93','aquifi88_aquifinanciame');
 

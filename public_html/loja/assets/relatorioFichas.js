@@ -165,13 +165,17 @@ var DatatableChildRemoteDataDemo = function () {
                     hidden: true
                 }, */{
                     field: "data_cadastro",
-                    title: "Data",
+                    title: "Data Cadastro",
                     width: 200,
                     sortable: false,
                     template: function(row) {
-                        var dataQuebrada = row.data_cadastro.split(' ');
+                        var date = new Date(row.data_cadastro);
+                        var options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit' , minute: '2-digit', second: '2-digit' };
+                        return date.toLocaleDateString("pt-BR", options);
+
+                        /* var dataQuebrada = row.data_cadastro.split(' ');
                         var dataCadastro = dataQuebrada[0].split('-');
-                        return dataCadastro[2] + '/' + dataCadastro[1] + '/' + dataCadastro[0] + ' ' + dataQuebrada[1];
+                        return dataCadastro[2] + '/' + dataCadastro[1] + '/' + dataCadastro[0] + ' - ' + dataQuebrada[1]; */
                     }
                 }, {
                     field: "observacao",
@@ -256,26 +260,12 @@ var DatatableChildRemoteDataDemo = function () {
                 title: 'Observações',
                 content: subTableInit
             },
-            rows: {
-                afterTemplate: function(row,data, index){
-                    console.log('afterTemplate');
-                    if (row.situacao=2) {
-                        $('.m-datatable__toggle-subtable[data-value="'+row.id+'"]').closest('tr').find('td').addClass('invalid');
-                        //$(row).css('background-color', 'red');
-                    }
+            dataMapCallback: function(raw){
+                console.log('raw', raw);
+                if (row.situacao=2) {
+                    $('.m-datatable__toggle-subtable[data-value="'+row.id+'"]').closest('tr').find('td').addClass('invalid');
+                    //$(row).css('background-color', 'red');
                 }
-                /* callback: function(row, data, index) {
-                    console.log('seqw',datatable.getOption());
-                    console.log(datatable.getOption('columns'));
-                    console.log(datatable.getOption('columns.1.template'));
-                    if (row.situacao=2) {
-                        $('.m-datatable__toggle-subtable[data-value="'+row.id+'"]').closest('tr').find('td').addClass('invalid');
-                        //$(row).css('background-color', 'red');
-                    }
-                    row.cells[0].innerText = "teste";
-                } */
-                /* // auto hide columns, if rows overflow. work on non locked columns
-                autoHide: false */
             },
 
             // columns definition
@@ -287,19 +277,23 @@ var DatatableChildRemoteDataDemo = function () {
                 textAlign: 'center', // left|right|center,
             }, {
                 field: "dados_pessoais_nome",
-                title: "Nome",
-                afterTemplate: function(row) {
+                title: "Nome"
+                /* afterTemplate: function(row) {
                     if (row.situacao=2) {
                         $('.m-datatable__toggle-subtable[data-value="'+row.id+'"]').closest('tr').find('td').addClass('invalid');
                     }
-                    return row.dados_pessoais_nome;},
+                    return row.dados_pessoais_nome;}, */
 
             }, {
                 field: "data_cadastro",
-                title: "Data",
+                title: "Data Cadastro",
                 template: function(row) {
+                    var date = new Date(row.data_cadastro);
+                    var options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit' , minute: '2-digit', second: '2-digit' };
+                    return date.toLocaleDateString("pt-BR", options);
+                    /*
                     var dataCadastro = row.data_cadastro.split('-');
-                    return dataCadastro[2] + '/' + dataCadastro[1] + '/' + dataCadastro[0];
+                    return dataCadastro[2] + '-' + dataCadastro[1] + '-' + dataCadastro[0];*/
                 }
             }, {
                 field: "info_finais_lojacontato",
