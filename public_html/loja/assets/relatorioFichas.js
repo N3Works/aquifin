@@ -1,6 +1,6 @@
 //var dataTable = null;
 jQuery(document).ready(function () {
-    //chama o botão salvar observação
+    //Function para salvar uma nova observação
     $('.salvarObservacao').on('click', function() {
         var obsFichaCadastral = $('#observacao_modal').find('#observacao').val();
         var idFicha = $(this).attr('data-rel');        
@@ -9,6 +9,19 @@ jQuery(document).ready(function () {
             return;
         }
         incluirObservacao(obsFichaCadastral, idFicha) ;
+    });
+
+    //Function para alterar a informação de contato
+    $('.salvarContato').on('click', function() {
+        var infoContato = $('#contato_modal').find('#infoContato').val();
+        var idFicha = $(this).attr('data-rel');        
+        if(!infoContato){
+            alert('O campo Contato é de preenchimento obrigatório.');
+            return;
+        }
+        console.log('4');
+        alterarInfoContato(infoContato, idFicha) ;
+        console.log('5');
     });
 
     dataTable = DatatableChildRemoteDataDemo.init();
@@ -20,19 +33,33 @@ function chamarModal(id){
     $('.salvarObservacao').attr('data-rel',id);
 }
 
-function imprimirProposta(nomeDoArquivo,fichaId){
-    if (confirm('Deseja realmente imprimir a ficha? A Situação mudará para EM ANÁLISE. ')) {
-        $.ajax({
-            url: 'trocaSituacaoAjax.php',
-            method: "POST",
-            data: { situacao: 5, fichaId: fichaId }
-        }).done(function(data) {
-            alert(data);
-            var url = '../formularios/propostas/' + nomeDoArquivo;
-            var win = window.open(url, '_blank');
-            win.focus();
-            dataTable.load();
-        });
+function chamarModalContato(id){
+    $('#contato_modal').modal('show');
+    $('.salvarContato').attr('data-rel',id);
+}
+
+
+function imprimirProposta(nomeDoArquivo,fichaId, situacaoAtual){
+    //muda a situação da ficha para "em análise" apenas se a situacao atual = "nova"
+    mudarSituacao = false;
+    if (situacaoAtual == '2' || situacaoAtual == 2 ){
+        if (confirm('Deseja realmente imprimir a ficha? A Situação mudará para EM ANÁLISE. ')) {
+            $.ajax({
+                url: 'trocaSituacaoAjax.php',
+                method: "POST",
+                data: { situacao: 5, fichaId: fichaId }
+            }).done(function(data) {
+                var url = '../formularios/propostas/' + nomeDoArquivo;
+                var win = window.open(url, '_blank');
+                win.focus();
+                dataTable.load();
+            });
+        }
+    } else {
+        var url = '../formularios/propostas/' + nomeDoArquivo;
+        var win = window.open(url, '_blank');
+        win.focus();
+        dataTable.load();
     }
 }
 
@@ -86,6 +113,21 @@ function incluirObservacao(observacao, fichaId) {
             alert(data);
             dataTable.load();
             $('#observacao_modal').modal('hide');
+        });
+    }
+}
+
+function alterarInfoContato(infoContato, fichaId) {
+
+    if (confirm('Deseja realmente alterar o contato para "' + infoContato + '"?')) {
+        $.ajax({
+            url: 'salvarInfoContatoAjax.php',
+            method: "POST",
+            data: { infoContato: infoContato, fichaId: fichaId }
+        }).done(function(data) {
+            alert(data);
+            dataTable.load();
+            $('#contato_modal').modal('hide');
         });
     }
 }
@@ -300,9 +342,16 @@ var DatatableChildRemoteDataDemo = function () {
                 title: "Loja"
             }, {
                 field: "info_finais_nomecontato",
-                title: "Contato"
+                title: "Contato",
+                template : function(row){
+                    return  '\
+                        <a href="javascript:void(0)" onclick="chamarModalContato(\''+row.id+'\')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Alterar contrato">\
+                        <i class="la la-edit" style="font-size: 0.93em;"></i>\
+                        </a>' + row.info_finais_nomecontato;
+
+                }
             }, {
-                field: "dados_pessoais_cidade",
+                field: "info_finais_cidadecontato",
                 title: "Cidade"
             }, {
                 field: "dados_pessoais_ufend",
@@ -360,7 +409,7 @@ var DatatableChildRemoteDataDemo = function () {
                             <a href="javascript:void(0)" onclick="chamarModal('+row.id+')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Adicionar observação">\
                                 <i class="la la-comment"></i>\
                             </a>\
-                            <a href="javascript:void(0)" onclick="imprimirProposta(\''+row.nome_arquivo_proposta+'\','+row.id+')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Imprimir proposta">\
+                            <a href="javascript:void(0)" onclick="imprimirProposta(\''+row.nome_arquivo_proposta+'\','+row.id+',' + row.situacao + ')" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Imprimir proposta">\
                                 <i class="la la-print"></i>\
                             </a>\
                         ';

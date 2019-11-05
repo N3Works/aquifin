@@ -75,6 +75,7 @@ if ($dddtelcontato && $telcontato) {
     $telContatoSalvar = '(' . $dddtelcontato . ') '. $telcontato;
 }
 
+date_default_timezone_set('America/Bahia');
 $dataAtual = date('Y-m-d H:i:s');
 
 $c = new mysqli('216.172.172.44','aquifi88_aquifin','CharlottE93','aquifi88_aquifinanciame');
@@ -342,12 +343,13 @@ $sql = "INSERT INTO ficha_cadastral (
   '$condicao',
   
   '$telContatoSalvar',
-  '$nomecontato',
+  '', 
   '$lojacontato',
   '$cidadecontato',
   '$emailcontato',
   '$obs',
   '$nome_arquivo_proposta')";
+  //o campo info_finais_nomecontato deve ser preenchido com vazio a pedido de Flavio Vargas em 05/11/2019
 
 if ($c->query($sql) === TRUE) {
     echo "Cadastro efetuado com sucesso!";

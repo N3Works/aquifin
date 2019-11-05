@@ -238,7 +238,7 @@ if(isset($_POST['anoItem']))
 
 <script src="assets/relatorioFichas.js" type="text/javascript"></script>
 <!--end::Page Resources -->
-<!--begin::Modal-->
+<!--begin::Modal Observacao-->
     <div class="modal fade" id="observacao_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -268,6 +268,43 @@ if(isset($_POST['anoItem']))
                         Cancelar
                     </button>
                     <button type="button"  class="btn btn-primary salvarObservacao" data-rel="">
+                        Salvar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--end::Modal Observacao-->
+<!--begin::Modal-->
+<div class="modal fade" id="contato_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Alterar Informação de Contato
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">
+                            &times;
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="message-text" class="form-control-label">
+                                
+                            </label>
+                            <textarea class="form-control" id="infoContato" maxlength="255"></textarea>
+                            <small> limite de 255 caracteres  </small>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="button"  class="btn btn-primary salvarContato" data-rel="">
                         Salvar
                     </button>
                 </div>
