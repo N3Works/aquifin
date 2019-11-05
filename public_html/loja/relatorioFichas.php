@@ -146,7 +146,7 @@ if(isset($_POST['anoItem']))
                                     </div>
                                 </div>
                                 <div class="col-xl-4 order-1 order-xl-2 m--align-right">
-                                    <a href="#" onclick="ImprimirRelatorio('corpoRelatorio')" class="btn btn-primary m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+                                    <a href="#" onclick="ImprimirRelatorio()" class="btn btn-primary m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
 												<span>
 													<i class="la la-download"></i>
 													<span>

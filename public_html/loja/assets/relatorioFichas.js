@@ -61,11 +61,20 @@ function imprimirProposta(nomeDoArquivo,fichaId, situacaoAtual){
         win.focus();
         dataTable.load();
     }
+    
 }
 
-function ImprimirRelatorio(elem)
+function ImprimirRelatorio()
 {
-    //window.location = 'imprimirRelFichas.php';
+    console.log('ImprimirRelatorio');
+    var outerHTML =  document.documentElement.outerHTML;
+    console.log('outerHTML', outerHTML);
+    $.ajax({
+        url: 'imprimirRelFichas.php',
+        method: "POST",
+        data: { outerHTML: outerHTML }
+    });
+    
 
     /*     var mywindow = window.open('', 'PRINT', 'height=400,width=600');
 
