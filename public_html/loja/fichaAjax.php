@@ -24,7 +24,7 @@ if (isset($_REQUEST['datatable']['query']['generalSearch'])) {
         $search = $_REQUEST['datatable']['query']['generalSearch']['text'];
         if ($search) {
             if (strpos($search, '/') === false) {
-                $where = ' AND ( dados_pessoais_nome LIKE \'%'. $search .'%\' 
+                $where = ' WHERE ( dados_pessoais_nome LIKE \'%'. $search .'%\' 
                  OR data_cadastro LIKE \'%'. $search .'%\' 
                  OR info_finais_lojacontato LIKE \'%'. $search .'%\' 
                  OR dados_pessoais_cidade LIKE \'%'. $search .'%\' 
