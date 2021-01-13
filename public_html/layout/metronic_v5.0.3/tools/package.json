@@ -9,7 +9,7 @@
     "clipboard": "^1.7.1",
     "gulp-filter": "^5.0.1",
     "handlebars": "4.0.10",
-    "jquery-validation": "^1.16.0",
+    "jquery-validation": "^1.19.3",
     "popper.js": "1.9.3",
     "prismjs": "^1.6.0"
   },
